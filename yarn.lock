@@ -585,6 +585,12 @@ buffer-shims@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/buffer-shims/-/buffer-shims-1.0.0.tgz#9978ce317388c649ad8793028c3477ef044a8b51"
 
+bufferstreams@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/bufferstreams/-/bufferstreams-1.1.1.tgz#0161373060ac5988eff99058731114f6e195d51e"
+  dependencies:
+    readable-stream "^2.0.2"
+
 caller-path@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/caller-path/-/caller-path-0.1.0.tgz#94085ef63581ecd3daa92444a8fe94e82577751f"
@@ -961,7 +967,7 @@ eslint-loader@^1.6.1:
     object-assign "^4.0.1"
     object-hash "^1.1.4"
 
-eslint@^3.13.1:
+eslint@^3.0.0, eslint@^3.13.1:
   version "3.14.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.14.0.tgz#2c617e5f782fda5cbee5bc8be7ef5053af8e63a3"
   dependencies:
@@ -1428,6 +1434,14 @@ gulp-codecov@^2.0.2:
     gulp-util "^3.0.6"
     path "^0.12.7"
     through2 "^2.0.0"
+
+gulp-eslint@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-eslint/-/gulp-eslint-3.0.1.tgz#04e57e3e18c6974267c12cf6855dc717d4a313bd"
+  dependencies:
+    bufferstreams "^1.1.1"
+    eslint "^3.0.0"
+    gulp-util "^3.0.6"
 
 gulp-istanbul@^1.1.1:
   version "1.1.1"
@@ -2485,7 +2499,7 @@ randomatic@^1.1.3:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.5, readable-stream@^2.1.5, readable-stream@^2.2.2:
+readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.5, readable-stream@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
   dependencies:

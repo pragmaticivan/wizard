@@ -9,8 +9,14 @@ module.exports = function(root) {
     root.stub = root.sandbox.stub.bind(root.sandbox);
     root.spy = root.sandbox.spy.bind(root.sandbox);
     root.mock = root.sandbox.mock.bind(root.sandbox);
-    root.useFakeTimers = root.sandbox.useFakeTimers.bind(root.sandbox);
-    root.useFakeXMLHttpRequest = root.sandbox.useFakeXMLHttpRequest.bind(root.sandbox);
+    root.useFakeTimers = root
+                            .sandbox
+                            .useFakeTimers
+                            .bind(root.sandbox);
+    root.useFakeXMLHttpRequest = root
+                                    .sandbox
+                                    .useFakeXMLHttpRequest
+                                    .bind(root.sandbox);
     root.useFakeServer = root.sandbox.useFakeServer.bind(root.sandbox);
   });
 

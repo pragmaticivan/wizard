@@ -1,14 +1,14 @@
 import Wizard from '../../src/wizard';
 import path from 'path';
 
-describe('Wizard', function () {
-  describe('config', function () {
+describe('Wizard', function() {
+  describe('config', function() {
     let cwd = path.resolve('test/fixtures/module_files');
     let verbose = false;
 
-    it('should set verbose to false', function () {
+    it('should set verbose to false', function() {
       const optParams = {
-        verbose: false
+        verbose: false,
       };
 
       const wizard = new Wizard(optParams);
@@ -16,20 +16,19 @@ describe('Wizard', function () {
       expect(wizard.getOptions().verbose).to.equal(false);
     });
 
-    it('should set a custom logger', function () {
-      const logger = { foo: true, info: function() {} }
+    it('should set a custom logger', function() {
+      const logger = {foo: true, info: function() {}};
       const instance = new Wizard({logger: logger, verbose: verbose});
       return 'foo' in instance.getOptions().logger;
     });
 
-    it('should set the working directory to `'+ cwd +'`', function () {
+    it('should set the working directory to `'+ cwd +'`', function() {
       const instance = new Wizard({cwd: cwd, verbose: verbose});
       expect(instance.getOptions().cwd).to.equal(cwd);
     });
   });
 
-  describe('inject', function () {
-
+  describe('inject', function() {
     it('should add a glob pattern to inject one file', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
@@ -37,7 +36,7 @@ describe('Wizard', function () {
 
       instance.inject('test/fixtures/root_files/foo.js');
 
-      expect([file]).to.deep.equal(instance.getInjection())
+      expect([file]).to.deep.equal(instance.getInjection());
     });
 
     it('should inject all the files in the module_files app', function() {
@@ -45,7 +44,7 @@ describe('Wizard', function () {
       const instance = new Wizard({verbose: verbose});
       const files = [
         'test/fixtures/module_files/model/**/*.js',
-        'test/fixtures/module_files/controller/**/*.js'
+        'test/fixtures/module_files/controller/**/*.js',
       ];
 
       instance.inject('test/fixtures/module_files/model/**/*.js')
@@ -53,7 +52,5 @@ describe('Wizard', function () {
 
       expect(files).to.deep.equal(instance.getInjection());
     });
-
   });
-
 });

@@ -1,14 +1,16 @@
 import path from 'path';
-const glob = require("multi-glob").glob;
+const glob = require('multi-glob').glob;
 
 /**
  * Wizard lib
  */
-class Wizard  {
+class Wizard {
 
   /**
-   * @param  {Object}
-   * TODO: adds support to "base object namespace"
+   * Constructor.
+   * @param  {Object} optConfig
+   *
+   * TODO: Add support to "base object namespace"
    */
   constructor(optConfig) {
     this.options_ = {
@@ -16,7 +18,7 @@ class Wizard  {
       logger: console,
       verbose: true,
       loggingType: 'info',
-      defaultExclusion: []
+      defaultExclusion: [],
     };
 
     optConfig = optConfig || {};
@@ -72,7 +74,7 @@ class Wizard  {
    * @param  {Object} optConfig;
    */
   mergeOptions_(optConfig) {
-    this.options_ = Object.assign(this.options_, optConfig)
+    this.options_ = Object.assign(this.options_, optConfig);
   }
 
   /**
@@ -81,7 +83,7 @@ class Wizard  {
    */
   loadDefaultExclusion() {
     const defaultExclusion = this.getOptions().defaultExclusion;
-    
+
     if (defaultExclusion.length > 0) {
       return this.exclude(defaultExclusion);
     }
@@ -90,37 +92,41 @@ class Wizard  {
   }
 
   /**
-   * Target.
+   * Target where the files are going to be in jected.
+   * @param  {Object} obj
    * @return {Promise}
    */
   into(obj) {
     return this.getFiles()
       .then((files) => {
-        for( let f in files) {
+        if (files.length <= 0) {
+          return;
+        }
 
-          let loopFile = files[f]; 
+        files.forEach( (f) => {
+          let loopFile = f;
 
           delete require.cache[loopFile];
-          
+
           let args = [];
           let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
           let mod = require(this.getFullPath_(loopFile));
 
           // Handle ES6 default exports (ie. named export called default)
           if (mod.default) {
-            mod = mod.default
+            mod = mod.default;
           }
 
-          for (var a in arguments) {
-            args.push(arguments[a]);
-          }
+          arguments.forEach((a) => {
+            args.push(a);
+          });
 
           if (typeof mod === 'function') {
             mod = mod.apply(mod, args);
           }
 
           this.createNamespace_(obj, parts, mod);
-        }
+        });
       });
   }
 
@@ -171,11 +177,13 @@ class Wizard  {
   getFiles() {
     const options = {
       ignore: this.getExclusion(),
-      cwd: this.getOptions().cwd
+      cwd: this.getOptions().cwd,
     };
 
     return new Promise((resolve, reject) => {
-      glob(this.getInjection(), options, (err, files) => err === null ? resolve(files) : reject(err))
+      glob(this.getInjection(), options, (err, files) => {
+        err === null ? resolve(files) : reject(err);
+      });
     });
   }
 
@@ -206,7 +214,7 @@ class Wizard  {
 
   /**
    * Get relative path.
-   * @param  {string}
+   * @param  {string} file
    * @return {string}
    */
   getRelativePath_(file) {
