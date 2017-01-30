@@ -106,7 +106,7 @@ class Wizard {
         files.forEach( (f) => {
           let loopFile = f;
 
-          delete require.cache[loopFile];
+          delete require.cache[this.getFullPath_(loopFile)];
 
           let args = [];
           let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
@@ -117,9 +117,9 @@ class Wizard {
             mod = mod.default;
           }
 
-          arguments.forEach((a) => {
-            args.push(a);
-          });
+          for (let index in arguments) {
+            args.push(arguments[index]);
+          }
 
           if (typeof mod === 'function') {
             mod = mod.apply(mod, args);
