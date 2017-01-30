@@ -1,1 +1,16 @@
 ## Change Log
+
+### 0.0.3 (2017/01/30 23:16 +00:00)
+- [af5e3d3](https://github.com/pragmaticivan/wizard/commit/af5e3d37448871c03dbd6be2b215c71a5c4e6566) 0.0.2 (@pragmaticivan)
+- [c94dd92](https://github.com/pragmaticivan/wizard/commit/c94dd9298e9d7449691f09c0112de8e2fc95ea1a) Adds build tasks (@pragmaticivan)
+- [864df40](https://github.com/pragmaticivan/wizard/commit/864df40a9f001aeec9e9201e90b24a6feb0163a2) 0.0.1 (@pragmaticivan)
+- [0df3e35](https://github.com/pragmaticivan/wizard/commit/0df3e35254603527a15cb5b188d53d8d3a309994) Fixes package.json version (@pragmaticivan)
+- [77b5679](https://github.com/pragmaticivan/wizard/commit/77b5679835b597ae101576c97c0ba46cf92a5be4) Applies eslint (@pragmaticivan)
+- [8c4d9be](https://github.com/pragmaticivan/wizard/commit/8c4d9bee80bf8ac2cada3013b24082cffdad2568) Add tests for into method (@pragmaticivan)
+- [a90c31a](https://github.com/pragmaticivan/wizard/commit/a90c31a4a178e2aa3d2ea1240c71d97271bf1e52) Updates package.json license (@pragmaticivan)
+- [08f6e28](https://github.com/pragmaticivan/wizard/commit/08f6e2815b3a02133153a8331e2d9d6108bb584a) Remove unused dependencies (@pragmaticivan)
+- [b296687](https://github.com/pragmaticivan/wizard/commit/b2966879175b29e5fa89b625ac3092e35c04ce8a) Cleans environment for eslint (@pragmaticivan)
+- [dd819f0](https://github.com/pragmaticivan/wizard/commit/dd819f0fc6f9b925ed63cb7ec209ea5009f1d028) Updates codecov badge (@pragmaticivan)
+- [7eda3d5](https://github.com/pragmaticivan/wizard/commit/7eda3d5ebf916f90a71e62960b146f673ad7db45) Adds codecov env var with JWT (@pragmaticivan)
+- [d58ef3e](https://github.com/pragmaticivan/wizard/commit/d58ef3eda0116512be4e5c3162b0a8d055ea46d0) Adds support to travis and codecov (@pragmaticivan)
+- [2679412](https://github.com/pragmaticivan/wizard/commit/2679412f33bdad1b98cfe6d6fbc64324d3ab26e5) 🎩 ✨ (@pragmaticivan)
