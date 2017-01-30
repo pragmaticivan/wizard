@@ -1,0 +1,40 @@
+{
+  "name": "express-wizard",
+  "version": "0.0.1",
+  "description": "Autoload your express dependencies using the power of glob",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/gulp build",
+    "coverage": "./node_modules/.bin/gulp coverage",
+    "lint": "./node_modules/.bin/gulp lint",
+    "release": "NODE_ENV=production ./node_modules/.bin/gulp build",
+    "test": "./node_modules/.bin/gulp test",
+    "test:watch": "./node_modules/.bin/gulp test:watch",
+    "watch": "./node_modules/.bin/gulp watch"
+  },
+  "author": "Ivan Santos",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015": "^6.22.0",
+    "chai": "^3.5.0",
+    "co-mocha": "^1.1.3",
+    "eslint": "^3.13.1",
+    "eslint-config-google": "^0.7.1",
+    "eslint-loader": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-mocha": "^3.0.1",
+    "isparta": "^4.0.0",
+    "mocha": "^3.2.0",
+    "run-sequence": "^1.2.2",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^2.0.1"
+  },
+  "dependencies": {
+    "glob": "^7.1.1",
+    "multi-glob": "^1.0.1"
+  }
+}
