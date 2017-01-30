@@ -6,8 +6,8 @@
   <a href="http://travis-ci.org/pragmaticivan/wizard">
     <img src="https://secure.travis-ci.org/pragmaticivan/wizard.svg?branch=master" alt="Travis CI" />
   </a>
-  <a href="https://coveralls.io/r/pragmaticivan/wizard">
-    <img src="http://img.shields.io/coveralls/pragmaticivan/wizard.svg?branch=master&style=flat" alt="Coverage" />
+  <a href="https://codecov.io/gh/pragmaticivan/wizard">
+    <img src="https://codecov.io/gh/pragmaticivan/wizard/branch/master/graph/badge.svg" alt="Coverage" />
   </a>
 </div>
 
