@@ -10,7 +10,10 @@
     "watch": "./node_modules/.bin/gulp watch",
     "test": "./node_modules/.bin/gulp coverage",
     "test:watch": "./node_modules/.bin/gulp test:watch",
-    "test:coverage:travis": "./node_modules/.bin/gulp test:coverage:travis"
+    "test:coverage:travis": "./node_modules/.bin/gulp test:coverage:travis",
+    "generate-changelog": "github-changes -n ${npm_package_version} --owner pragmaticivan --repository wizard --only-pulls --use-commit-body",
+    "preversion": "npm test",
+    "version": "npm run generate-changelog && git add CHANGELOG.md"
   },
   "author": "Ivan Santos",
   "license": "MIT",
@@ -22,6 +25,7 @@
     "eslint": "^3.13.1",
     "eslint-config-google": "^0.7.1",
     "eslint-loader": "^1.6.1",
+    "github-changes": "^1.0.4",
     "gulp": "^3.9.1",
     "gulp-codecov": "^2.0.2",
     "gulp-eslint": "^3.0.1",

@@ -30,9 +30,9 @@ describe('Wizard', function() {
 
   describe('inject', function() {
     it('should add a glob pattern to inject one file', function() {
-      const verbose = false,
-            instance = new Wizard({verbose: verbose}),
-            file = 'test/fixtures/root_files/foo.js';
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+      const file = 'test/fixtures/root_files/foo.js';
 
       instance.inject('test/fixtures/root_files/foo.js');
 
@@ -40,9 +40,9 @@ describe('Wizard', function() {
     });
 
     it('should inject all the files in the module_files app', function() {
-      const verbose = false,
-            instance = new Wizard({verbose: verbose}),
-            files = [
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+      const files = [
               'test/fixtures/module_files/model/**/*.js',
               'test/fixtures/module_files/controller/**/*.js',
             ];
@@ -58,10 +58,8 @@ describe('Wizard', function() {
     const cwd = path.resolve('test/fixtures/module_files');
     const verbose = false;
 
-    it('should load the module_files app files', function (done) {
-      const verbose = false,
-            instance = new Wizard({verbose: verbose, cwd: cwd});
-
+    it('should load the module_files app files', function(done) {
+      const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
       instance.inject('**/*.js')
@@ -75,10 +73,8 @@ describe('Wizard', function() {
         });
     });
 
-    it('should load the files inside the model folder', function (done) {
-      const verbose = false,
-            instance = new Wizard({verbose: verbose, cwd: cwd});
-
+    it('should load the files inside the model folder', function(done) {
+      const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
       instance.inject('model/**/*.js')
@@ -93,10 +89,8 @@ describe('Wizard', function() {
         });
     });
 
-    it('should be able to perform a script', function (done) {
-      const verbose = false,
-            instance = new Wizard({verbose: verbose, cwd: cwd});
-
+    it('should be able to perform a script', function(done) {
+      const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
       instance.inject('controller/**/*.js')

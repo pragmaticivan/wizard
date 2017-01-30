@@ -93,10 +93,11 @@ class Wizard {
 
   /**
    * Target where the files are going to be in jected.
-   * @param  {Object} obj
+   * @param {Object} obj
+   * @param {[]} optArgs
    * @return {Promise}
    */
-  into(obj) {
+  into(obj, ...optArgs) {
     return this.getFiles()
       .then((files) => {
         if (files.length <= 0) {
@@ -117,9 +118,11 @@ class Wizard {
             mod = mod.default;
           }
 
-          for (let index in arguments) {
-            args.push(arguments[index]);
-          }
+          args.push(obj);
+
+          optArgs.forEach((arg) => {
+            args.push(arg);
+          });
 
           if (typeof mod === 'function') {
             mod = mod.apply(mod, args);
