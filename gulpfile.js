@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const isparta = require('isparta');
 const loadPlugins = require('gulp-load-plugins');
+const codecov = require('gulp-codecov');
 
 const manifest = require('./package.json');
 const mochaGlobals = require('./test/setup/.globals');
@@ -45,6 +46,11 @@ function coverage(done) {
     });
 }
 
+function codeCoverageServer() {
+  gulp.src('./coverage/lcov.info')
+      .pipe(codecov());
+}
+
 var watchFiles = ['src/**/*', 'test/**/*'];
 
 function testWatch() {
@@ -52,7 +58,9 @@ function testWatch() {
 }
 // Set up coverage and run tests
 gulp.task('coverage', coverage);
+gulp.task('codeCove', codeCoverageServer);
 
 // Run our tests
 gulp.task('test', test);
 gulp.task('test:watch', testWatch);
+gulp.task('test:coverage:travis', runSequence(['coverage', 'codeCove']));
