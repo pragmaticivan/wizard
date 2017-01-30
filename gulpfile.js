@@ -1,7 +1,12 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
+const del = require('del');
+const runSequence = require('run-sequence');
+const babel = require('gulp-babel');
+const sourcemaps = require('gulp-sourcemaps');
 const isparta = require('isparta');
 const loadPlugins = require('gulp-load-plugins');
+const concat = require('gulp-concat');
 const codecov = require('gulp-codecov');
 const mochaGlobals = require('./test/setup/.globals');
 const Instrumenter = isparta.Instrumenter;
@@ -9,6 +14,7 @@ const Instrumenter = isparta.Instrumenter;
 // Load all of our Gulp plugins
 const $ = loadPlugins();
 const watchFiles = ['src/**/*', 'test/**/*'];
+const destinationFolder = 'dist';
 
 /**
  * Require register babel.
@@ -37,6 +43,27 @@ function mocha_() {
 function test() {
   registerBabel_();
   return mocha_();
+}
+
+/**
+ * Build helper.
+ * @param  {Function} done
+ */
+function build(done) {
+  runSequence(
+    'clean',
+    'build-src',
+    ['lint'],
+    done
+  );
+}
+
+/**
+ * Clean distribution folder.
+ * @param  {Function} done [description]
+ */
+function cleanDist(done) {
+  del([destinationFolder]).then(() => done());
 }
 
 /**
@@ -73,12 +100,31 @@ function testWatch() {
   gulp.watch(watchFiles, ['test']);
 }
 
+
+// General build
+gulp.task('build', build);
+
+
+// Build the src files
+gulp.task('build-src', () => {
+    return gulp.src('src/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel())
+        .pipe(concat('all.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'));
+});
+
+// Performs eslint functions
 gulp.task('lint', () => {
-    return gulp.src(['**/*.js', '!node_modules/**', '!coverage/**'])
+    return gulp.src(['**/*.js', '!node_modules/**', '!coverage/**', '!dist/**'])
       .pipe(eslint())
       .pipe(eslint.format())
       .pipe(eslint.failAfterError());
 });
+
+// Remove the built files
+gulp.task('clean', cleanDist);
 
 // Set up coverage and run tests
 gulp.task('coverage', coverage);
