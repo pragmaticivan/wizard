@@ -1,6 +1,8 @@
 ## Change Log
 
-### 0.0.3 (2017/01/30 23:16 +00:00)
+### 0.0.4 (2017/01/30 23:21 +00:00)
+- [2f9d6b7](https://github.com/pragmaticivan/wizard/commit/2f9d6b7cb6b52311c2bdc2c9fd6cd62a7245d412) 0.0.3 (@pragmaticivan)
+- [fb060c9](https://github.com/pragmaticivan/wizard/commit/fb060c9447969f48cab110c653130f5432fb380c) Improves package.json (@pragmaticivan)
 - [af5e3d3](https://github.com/pragmaticivan/wizard/commit/af5e3d37448871c03dbd6be2b215c71a5c4e6566) 0.0.2 (@pragmaticivan)
 - [c94dd92](https://github.com/pragmaticivan/wizard/commit/c94dd9298e9d7449691f09c0112de8e2fc95ea1a) Adds build tasks (@pragmaticivan)
 - [864df40](https://github.com/pragmaticivan/wizard/commit/864df40a9f001aeec9e9201e90b24a6feb0163a2) 0.0.1 (@pragmaticivan)
