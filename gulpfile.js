@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const runSequence = require('run-sequence');
 const path = require('path');
 const fs = require('fs');
 const isparta = require('isparta');
@@ -58,9 +57,8 @@ function testWatch() {
 }
 // Set up coverage and run tests
 gulp.task('coverage', coverage);
-gulp.task('codeCove', codeCoverageServer);
 
 // Run our tests
 gulp.task('test', test);
 gulp.task('test:watch', testWatch);
-gulp.task('test:coverage:travis', runSequence(['coverage', 'codeCove']));
+gulp.task('test:coverage:travis', codeCoverageServer);

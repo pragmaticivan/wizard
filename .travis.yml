@@ -1,6 +1,9 @@
 language: node_js
 node_js:
-  - '6'
-  - '6.2'
+- '6'
+- '6.2'
 after_success:
-  - npm run test:coverage:travis
+- npm run test:coverage:travis
+addons:
+  jwt:
+    secure: jYmHfSa1TSbul63+xbcZl59hYlYGH6yIp5z0NAwaGJ2w8hJtRZa5B26BVu4iiimErnIO4syfgaqBlytzrNTQUV/IVHAHQBr/dKeRY/W2Nv/I/aMZGrNLLFf/7HkTTRKzU0Xs9dohENAtFTp1BXWmWdnTI5VAH333BURhiOBoy+ISw1+mZ8NM4kMLu2TU9EZWzHzcC/3MFBaZvEgbjuOxJTHqK53miXYyiWYSYXMExy+NI7c2f2arDq26IUA6hSnOJQ8hj6oLvpE8pBfRZWPXF72opqG6PNQSh2QWKljigHjgVi4S8+xp5szJxzP43GVG8vnTzf9kaIgxVPjdCuUJUOJvkSyPwXNP5oHB+z22DSS0HDFH3oVRpvU/OsbM6d9r27fr8OrCy0tdIRGanv6PJXjISiQYrjkdhXcdg3dkdPSOpXWOub8nG0aFbSaqG4opJDCwya97jmq3S3NmZMpHsUwOxeSFpttIvcIh+N1M0CrgrP74wWxdCSvy7nfaDqu9efylqQqGwKejUhLH8uklgdtqB5lgAn3dA6pRPN3Yare2TLOyoXlfxWxZ1EdW+pW4DKI/nNKhQQCbigXOfARSO4D0g3cegCY0++4TvSjml53/XztzFZM8dfFBI5afDjvMjaqsR68fLnHLN2nTK0GM69jGexQrgGZAXfE2OnFQdCg=
