@@ -1,6 +1,6 @@
 {
   "name": "express-wizard",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Autoload your express dependencies using the power of glob",
   "main": "build/index.js",
   "scripts": {
