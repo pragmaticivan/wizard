@@ -96,15 +96,17 @@ class Wizard {
    * @return {Promise}
    */
   async into(obj, ...optArgs) {
-    let files = await this.getFiles();
+    try {
+      let files = await this.getFiles();
 
-    if (files.length <= 0) {
-      return;
+      if (files.length <= 0) {
+        return new Promise();
+      }
+
+      return this.processInjection_(files, obj, optArgs);
+    } catch(err) {
+      return Promise.reject(err);
     }
-
-    this.processInjection_(files, obj, optArgs);
-
-    return this;
   }
 
   /**
