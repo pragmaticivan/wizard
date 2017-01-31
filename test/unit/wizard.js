@@ -54,6 +54,32 @@ describe('Wizard', function() {
     });
   });
 
+  describe('exclude', function() {
+    it('should add a glob pattern to exclude one file', function() {
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+      const file = 'test/fixtures/root_files/foo.js';
+
+      instance.exclude('test/fixtures/root_files/foo.js');
+
+      expect([file]).to.deep.equal(instance.getExclusion());
+    });
+
+    it('should exclude all the files in the module_files app', function() {
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+      const files = [
+              'test/fixtures/module_files/model/**/*.js',
+              'test/fixtures/module_files/controller/**/*.js',
+            ];
+
+      instance.exclude('test/fixtures/module_files/model/**/*.js')
+              .exclude('test/fixtures/module_files/controller/**/*.js');
+
+      expect(files).to.deep.equal(instance.getExclusion());
+    });
+  });
+
   describe('into', function() {
     const cwd = path.resolve('test/fixtures/module_files');
     const verbose = false;
