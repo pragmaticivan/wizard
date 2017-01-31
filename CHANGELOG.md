@@ -1,6 +1,11 @@
 ## Change Log
 
+### upcoming (2017/01/31 22:47 +00:00)
+- [d7d5d0f](https://github.com/pragmaticivan/wizard/commit/d7d5d0fe008effaf6e446613b639efab4599a7c5) Adds tests for exclusion (@pragmaticivan)
+- [e9e129d](https://github.com/pragmaticivan/wizard/commit/e9e129d97fee1eef8b3ad62471abca09abde12ed) Fixex changelog order (@pragmaticivan)
+
 ### v0.0.14 (2017/01/31 22:40 +00:00)
+- [cdf1103](https://github.com/pragmaticivan/wizard/commit/cdf1103a52b6cd749f8bc9099bd0b0f529648fea) 0.0.14 (@pragmaticivan)
 - [4d61f32](https://github.com/pragmaticivan/wizard/commit/4d61f3208e9b888cef4708964556a4065c54debc) Fixes changelog (@pragmaticivan)
 - [3c65262](https://github.com/pragmaticivan/wizard/commit/3c652623e142de5cf70a7cdd7d2d4601f30aec48) Fixes .babelrc indentation (@pragmaticivan)
 
