@@ -1,7 +1,9 @@
 ## Change Log
 
-### upcoming (2017/01/31 22:50 +00:00)
+### v0.0.16 (2017/01/31 22:50 +00:00)
 - [10d9c18](https://github.com/pragmaticivan/wizard/commit/10d9c18106dbee8e875ad21a93cb9019d4e52e87) Updates order of changelog by semver (@pragmaticivan)
+
+### v0.0.15 (2017/01/31 22:47 +00:00)
 - [2ce3c91](https://github.com/pragmaticivan/wizard/commit/2ce3c91331392535502c260a8aa069d0d5912688) 0.0.15 (@pragmaticivan)
 - [d7d5d0f](https://github.com/pragmaticivan/wizard/commit/d7d5d0fe008effaf6e446613b639efab4599a7c5) Adds tests for exclusion (@pragmaticivan)
 - [e9e129d](https://github.com/pragmaticivan/wizard/commit/e9e129d97fee1eef8b3ad62471abca09abde12ed) Fixex changelog order (@pragmaticivan)
