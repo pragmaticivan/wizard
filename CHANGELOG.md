@@ -1,5 +1,9 @@
 ## Change Log
 
+### v0.0.9 (2017/01/31 02:08 +00:00)
+- [aa85f73](https://github.com/pragmaticivan/wizard/commit/aa85f734a7d24eb8b6ffdb8d25de44f0dad6b662) 0.0.9 (@pragmaticivan)
+- [095f665](https://github.com/pragmaticivan/wizard/commit/095f6659cc0dfe5166ff004b2b3d9523b322f8ab) Extracts file injection code (@pragmaticivan)
+
 ### v0.0.8 (2017/01/31 01:35 +00:00)
 - [29de09b](https://github.com/pragmaticivan/wizard/commit/29de09b2d66316e953c85c62f05aba3cf981de8a) 0.0.8 (@pragmaticivan)
 - [70bfc83](https://github.com/pragmaticivan/wizard/commit/70bfc8329783042b7d34196a49031c86524b3084) Starts using async/await (@pragmaticivan)
