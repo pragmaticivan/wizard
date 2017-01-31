@@ -1,5 +1,13 @@
 ## Change Log
 
+### upcoming (2017/01/31 20:41 +00:00)
+- [896144c](https://github.com/pragmaticivan/wizard/commit/896144c27ba64eb62134f61e53f02aca3ddb0405) Adds code of conduct and contributing guide (@pragmaticivan)
+
+### v0.0.10 (2017/01/31 20:20 +00:00)
+- [c8d6872](https://github.com/pragmaticivan/wizard/commit/c8d6872fad8ed21e81dfa8f1629499c5791887b1) 0.0.10 (@pragmaticivan)
+- [c9a941a](https://github.com/pragmaticivan/wizard/commit/c9a941a1da7a861323ce6cb921acaf05a9a8dfa5) Improves promise reject for 'into' function (@pragmaticivan)
+- [e92bf6e](https://github.com/pragmaticivan/wizard/commit/e92bf6ea5764a0a4251700712c2a584bfe9738ee) Cleans babelrc (@pragmaticivan)
+
 ### v0.0.9 (2017/01/31 02:08 +00:00)
 - [aa85f73](https://github.com/pragmaticivan/wizard/commit/aa85f734a7d24eb8b6ffdb8d25de44f0dad6b662) 0.0.9 (@pragmaticivan)
 - [095f665](https://github.com/pragmaticivan/wizard/commit/095f6659cc0dfe5166ff004b2b3d9523b322f8ab) Extracts file injection code (@pragmaticivan)
