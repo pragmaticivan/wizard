@@ -1,5 +1,10 @@
 ## Change Log
 
+### v0.0.7 (2017/01/30 23:33 +00:00)
+- [977bd2a](https://github.com/pragmaticivan/wizard/commit/977bd2abd26c13ef9e23ae110000437296fc13b9) 0.0.7 (@pragmaticivan)
+- [5adb19a](https://github.com/pragmaticivan/wizard/commit/5adb19aa1411ddf88cffcf633c53a87ff4d148d7) Test with specified npm version (@pragmaticivan)
+- [efb4469](https://github.com/pragmaticivan/wizard/commit/efb4469cc0fdd0b199463d9c0fd33648e08a5954) Test with specified npm version (@pragmaticivan)
+
 ### v0.0.6 (2017/01/30 23:29 +00:00)
 - [2929d8a](https://github.com/pragmaticivan/wizard/commit/2929d8a50f171ad1d21e79130735b0bf36d3865b) 0.0.6 (@pragmaticivan)
 - [6e3ac04](https://github.com/pragmaticivan/wizard/commit/6e3ac049dbd2e4f881ca489fdd334cfd71bab23a) Enables auto deployment only on tags (@pragmaticivan)
