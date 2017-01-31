@@ -1,6 +1,6 @@
 ## Change Log
 
-### upcoming (2017/01/31 22:40 +00:00)
+### v0.0.14 (2017/01/31 22:40 +00:00)
 - [4d61f32](https://github.com/pragmaticivan/wizard/commit/4d61f3208e9b888cef4708964556a4065c54debc) Fixes changelog (@pragmaticivan)
 - [3c65262](https://github.com/pragmaticivan/wizard/commit/3c652623e142de5cf70a7cdd7d2d4601f30aec48) Fixes .babelrc indentation (@pragmaticivan)
 
