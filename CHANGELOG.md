@@ -1,5 +1,9 @@
 ## Change Log
 
+### v0.0.8 (2017/01/31 01:35 +00:00)
+- [29de09b](https://github.com/pragmaticivan/wizard/commit/29de09b2d66316e953c85c62f05aba3cf981de8a) 0.0.8 (@pragmaticivan)
+- [70bfc83](https://github.com/pragmaticivan/wizard/commit/70bfc8329783042b7d34196a49031c86524b3084) Starts using async/await (@pragmaticivan)
+
 ### v0.0.7 (2017/01/30 23:33 +00:00)
 - [977bd2a](https://github.com/pragmaticivan/wizard/commit/977bd2abd26c13ef9e23ae110000437296fc13b9) 0.0.7 (@pragmaticivan)
 - [5adb19a](https://github.com/pragmaticivan/wizard/commit/5adb19aa1411ddf88cffcf633c53a87ff4d148d7) Test with specified npm version (@pragmaticivan)
