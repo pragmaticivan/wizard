@@ -26,7 +26,7 @@ class Wizard {
     this.injection_ = [];
     this.exclusion_ = [];
 
-    this.loadDefaultExclusion();
+    this.loadDefaultExclusion_();
   }
 
   /**
@@ -79,7 +79,7 @@ class Wizard {
    * Load default glob for exclusion.
    * @return {Wizard}
    */
-  loadDefaultExclusion() {
+  loadDefaultExclusion_() {
     const defaultExclusion = this.getOptions().defaultExclusion;
 
     if (defaultExclusion.length > 0) {
@@ -102,6 +102,18 @@ class Wizard {
       return;
     }
 
+    this.processInjection_(files, obj, optArgs);
+
+    return this;
+  }
+
+  /**
+   * Process file injection.
+   * @param  {string[]} files
+   * @param  {Object} obj
+   * @param  {string[]} optArgs
+   */
+  processInjection_(files, obj, optArgs) {
     files.forEach( (f) => {
       let loopFile = f;
 
@@ -111,7 +123,6 @@ class Wizard {
       let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
       let mod = require(this.getFullPath_(loopFile));
 
-      // Handle ES6 default exports (ie. named export called default)
       if (mod.default) {
         mod = mod.default;
       }
@@ -128,8 +139,6 @@ class Wizard {
 
       this.createNamespace_(obj, parts, mod);
     });
-
-    return this;
   }
 
   /**
