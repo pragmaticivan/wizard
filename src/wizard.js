@@ -9,8 +9,6 @@ class Wizard {
   /**
    * Constructor.
    * @param  {Object} optConfig
-   *
-   * TODO: Add support to "base object namespace"
    */
   constructor(optConfig) {
     this.options_ = {
@@ -97,40 +95,41 @@ class Wizard {
    * @param {[]} optArgs
    * @return {Promise}
    */
-  into(obj, ...optArgs) {
-    return this.getFiles()
-      .then((files) => {
-        if (files.length <= 0) {
-          return;
-        }
+  async into(obj, ...optArgs) {
+    let files = await this.getFiles();
 
-        files.forEach( (f) => {
-          let loopFile = f;
+    if (files.length <= 0) {
+      return;
+    }
 
-          delete require.cache[this.getFullPath_(loopFile)];
+    files.forEach( (f) => {
+      let loopFile = f;
 
-          let args = [];
-          let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
-          let mod = require(this.getFullPath_(loopFile));
+      delete require.cache[this.getFullPath_(loopFile)];
 
-          // Handle ES6 default exports (ie. named export called default)
-          if (mod.default) {
-            mod = mod.default;
-          }
+      let args = [];
+      let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
+      let mod = require(this.getFullPath_(loopFile));
 
-          args.push(obj);
+      // Handle ES6 default exports (ie. named export called default)
+      if (mod.default) {
+        mod = mod.default;
+      }
 
-          optArgs.forEach((arg) => {
-            args.push(arg);
-          });
+      args.push(obj);
 
-          if (typeof mod === 'function') {
-            mod = mod.apply(mod, args);
-          }
-
-          this.createNamespace_(obj, parts, mod);
-        });
+      optArgs.forEach((arg) => {
+        args.push(arg);
       });
+
+      if (typeof mod === 'function') {
+        mod = mod.apply(mod, args);
+      }
+
+      this.createNamespace_(obj, parts, mod);
+    });
+
+    return this;
   }
 
   /**
@@ -139,8 +138,6 @@ class Wizard {
    * @param  {Array} parts
    * @param  {Function|Object} mod
    * @return {Object}
-   *
-   * TODO: review .length usage.
    */
   createNamespace_(parent, parts, mod) {
     let part = parts.shift();

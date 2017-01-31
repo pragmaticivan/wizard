@@ -58,47 +58,41 @@ describe('Wizard', function() {
     const cwd = path.resolve('test/fixtures/module_files');
     const verbose = false;
 
-    it('should load the module_files app files', function(done) {
+    it('should load the module_files app files', async () => {
       const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
-      instance.inject('**/*.js')
-        .into(app)
-        .then(() => {
-          ['module1', 'module2'].map((file) => {
-            expect(typeof app.model[file]).to.equal('function');
-            expect(typeof app.controller[file]).to.equal('function');
-          });
-          done();
-        });
+      await instance.inject('**/*.js')
+        .into(app);
+
+      ['module1', 'module2'].map((file) => {
+        expect(typeof app.model[file]).to.equal('function');
+        expect(typeof app.controller[file]).to.equal('function');
+      });
     });
 
-    it('should load the files inside the model folder', function(done) {
+    it('should load the files inside the model folder', async () => {
       const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
-      instance.inject('model/**/*.js')
-        .into(app)
-        .then(() => {
-          ['module1', 'module2'].map((file) => {
-            expect(typeof app.model[file]).to.equal('function');
-          });
+      await instance.inject('model/**/*.js')
+        .into(app);
 
-          expect(app.controllers).to.equal(undefined);
-          done();
-        });
+      ['module1', 'module2'].map((file) => {
+        expect(typeof app.model[file]).to.equal('function');
+      });
+
+      expect(app.controllers).to.equal(undefined);
     });
 
-    it('should be able to perform a script', function(done) {
+    it('should be able to perform a script', async () => {
       const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
-      instance.inject('controller/**/*.js')
-        .into(app, true)
-        .then(() => {
-          expect(app.controller.module1.execute).to.equal(true);
-          done();
-        });
+      await instance.inject('controller/**/*.js')
+        .into(app, true);
+
+      expect(app.controller.module1.execute).to.equal(true);
     });
   });
 });
