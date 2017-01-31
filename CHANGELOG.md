@@ -1,7 +1,10 @@
 ## Change Log
 
-### v0.0.12 (2017/01/31 22:30 +00:00)
+### upcoming (2017/01/31 22:40 +00:00)
+- [4d61f32](https://github.com/pragmaticivan/wizard/commit/4d61f3208e9b888cef4708964556a4065c54debc) Fixes changelog (@pragmaticivan)
 - [3c65262](https://github.com/pragmaticivan/wizard/commit/3c652623e142de5cf70a7cdd7d2d4601f30aec48) Fixes .babelrc indentation (@pragmaticivan)
+
+### v0.0.12 (2017/01/31 22:30 +00:00)
 - [422a5e4](https://github.com/pragmaticivan/wizard/commit/422a5e4e5d28c5ac5c68f9871e43f5a5ed0d6047) 0.0.12 (@pragmaticivan)
 - [1bdd444](https://github.com/pragmaticivan/wizard/commit/1bdd444c96d0eedc47ba97b57d7af6586fe9830d) Add authenticated request (@pragmaticivan)
 - [fe3ff91](https://github.com/pragmaticivan/wizard/commit/fe3ff91db1e23ff53a0b21cae3d469d9aecb6f39) Fixes package.json (@pragmaticivan)
