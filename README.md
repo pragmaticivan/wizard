@@ -9,6 +9,10 @@
   <a href="https://codecov.io/gh/pragmaticivan/wizard">
     <img src="https://codecov.io/gh/pragmaticivan/wizard/branch/master/graph/badge.svg" alt="Coverage" />
   </a>
+  <a href="https://www.npmjs.com/package/express-wizard">
+    <img src="https://img.shields.io/npm/v/express-wizard.svg" alt="Npm" />
+  </a>
+  <img src="https://img.shields.io/npm/l/express-wizard.svg" alt="License">
 </div>
 
 ## License
