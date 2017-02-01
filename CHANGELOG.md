@@ -1,6 +1,13 @@
 ## Change Log
 
+### upcoming (2017/02/01 00:25 +00:00)
+- [8cc7e62](https://github.com/pragmaticivan/wizard/commit/8cc7e62d839ddf4a7ee6692a241e79419bd523ab) Fixes github changes package command (@pragmaticivan)
+- [c15826f](https://github.com/pragmaticivan/wizard/commit/c15826ff34cbf0e6cc517d232d77d5483656da96) Updates package scripts to adapt for usage on windows (@pragmaticivan)
+- [5c6546f](https://github.com/pragmaticivan/wizard/commit/5c6546f83b53109a131dcabce5d99461399ef06e) Adds appveyor support (@pragmaticivan)
+- [605416a](https://github.com/pragmaticivan/wizard/commit/605416a77f9bb72e39ffb6850404ac99b5febbe9) Fixes changelog (@pragmaticivan)
+
 ### v0.0.16 (2017/01/31 22:50 +00:00)
+- [b1b1bfa](https://github.com/pragmaticivan/wizard/commit/b1b1bfa54abaf069258d1b19843c75cd7c68913e) 0.0.16 (@pragmaticivan)
 - [10d9c18](https://github.com/pragmaticivan/wizard/commit/10d9c18106dbee8e875ad21a93cb9019d4e52e87) Updates order of changelog by semver (@pragmaticivan)
 
 ### v0.0.15 (2017/01/31 22:47 +00:00)
