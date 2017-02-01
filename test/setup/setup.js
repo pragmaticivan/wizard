@@ -15,7 +15,9 @@ module.exports = function(root) {
     root.useFakeXMLHttpRequest = root.sandbox
                                     .useFakeXMLHttpRequest
                                     .bind(root.sandbox);
-    root.useFakeServer = root.sandbox.useFakeServer.bind(root.sandbox);
+    root.useFakeServer = root.sandbox
+                            .useFakeServer
+                            .bind(root.sandbox);
   });
 
   afterEach(() => {

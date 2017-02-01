@@ -103,7 +103,9 @@ class Wizard {
         return new Promise();
       }
 
-      return this.processInjection_(files, obj, optArgs);
+      return new Promise((resolve) => {
+        return resolve(this.processInjection_(files, obj, optArgs));
+      });
     } catch(err) {
       return Promise.reject(err);
     }
@@ -141,6 +143,8 @@ class Wizard {
 
       this.createNamespace_(obj, parts, mod);
     });
+
+    return obj;
   }
 
   /**
