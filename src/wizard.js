@@ -116,6 +116,7 @@ class Wizard {
    * @param  {string[]} files
    * @param  {Object} obj
    * @param  {string[]} optArgs
+   * @return {Object}
    */
   processInjection_(files, obj, optArgs) {
     files.forEach( (f) => {
