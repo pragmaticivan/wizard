@@ -11,13 +11,13 @@
     "url": "https://github.com/pragmaticivan/wizard/issues"
   },
   "scripts": {
-    "build": "./node_modules/.bin/gulp build",
-    "lint": "./node_modules/.bin/gulp lint",
-    "release": "NODE_ENV=production ./node_modules/.bin/gulp build",
-    "test": "./node_modules/.bin/gulp coverage",
-    "test:watch": "./node_modules/.bin/gulp test:watch",
-    "test:coverage:travis": "./node_modules/.bin/gulp test:coverage:travis",
-    "generate-changelog": "github-changes --owner pragmaticivan -a --repository wizard --use-commit-body  --order-semver",
+    "build": "node ./node_modules/.bin/gulp build",
+    "lint": "node ./node_modules/.bin/gulp lint",
+    "release": "node NODE_ENV=production ./node_modules/.bin/gulp build",
+    "test": "node ./node_modules/.bin/gulp coverage",
+    "test:watch": "node ./node_modules/.bin/gulp test:watch",
+    "test:coverage:travis": "node ./node_modules/.bin/gulp test:coverage:travis",
+    "generate-changelog": "node github-changes --owner pragmaticivan -a --repository wizard --use-commit-body  --order-semver",
     "preversion": "npm test",
     "version": "npm run generate-changelog && git add CHANGELOG.md",
     "prepublish": "npm run build"
