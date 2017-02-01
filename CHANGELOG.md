@@ -1,6 +1,8 @@
 ## Change Log
 
-### upcoming (2017/02/01 00:25 +00:00)
+### upcoming (2017/02/01 18:44 +00:00)
+- [8c8f591](https://github.com/pragmaticivan/wizard/commit/8c8f59136c4e9665c8aa89d7119ddbf352f706d3) Makes 'into' function always return a promise. (@pragmaticivan)
+- [b3d5b7e](https://github.com/pragmaticivan/wizard/commit/b3d5b7edc5313ab2a0d5ade7683a8ad8f3856daf) 0.0.18 (@pragmaticivan)
 - [8cc7e62](https://github.com/pragmaticivan/wizard/commit/8cc7e62d839ddf4a7ee6692a241e79419bd523ab) Fixes github changes package command (@pragmaticivan)
 - [c15826f](https://github.com/pragmaticivan/wizard/commit/c15826ff34cbf0e6cc517d232d77d5483656da96) Updates package scripts to adapt for usage on windows (@pragmaticivan)
 - [5c6546f](https://github.com/pragmaticivan/wizard/commit/5c6546f83b53109a131dcabce5d99461399ef06e) Adds appveyor support (@pragmaticivan)
