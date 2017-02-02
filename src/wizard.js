@@ -99,15 +99,14 @@ class Wizard {
     try {
       let files = await this.getFiles();
 
-      if (files.length <= 0) {
-        return new Promise();
-      }
-
       return new Promise((resolve) => {
+        if (files.length <= 0) {
+          resolve([]);
+        }
         return resolve(this.processInjection_(files, obj, optArgs));
       });
-    } catch(err) {
-      return Promise.reject(err);
+    } catch(e) {
+      return Promise.reject(e);
     }
   }
 
