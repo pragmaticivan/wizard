@@ -115,12 +115,30 @@ gulp.task('build-src', () => {
         .pipe(gulp.dest('dist'));
 });
 
+gulp.task('watch-src', () => {
+  return gulp.watch('src/**/*.js', [
+    'build-src',
+  ]);
+});
+
+gulp.task('watch', ['watch-src']);
+
+
 // Performs eslint functions
+
+const lintWatchFiles = ['**/*.js',
+                        '!node_modules/**',
+                        '!coverage/**',
+                        '!dist/**'];
 gulp.task('lint', () => {
-    return gulp.src(['**/*.js', '!node_modules/**', '!coverage/**', '!dist/**'])
+    return gulp.src(lintWatchFiles)
       .pipe(eslint())
       .pipe(eslint.format())
       .pipe(eslint.failAfterError());
+});
+
+gulp.task('lint:watch', () => {
+  gulp.watch(lintWatchFiles, ['lint']);
 });
 
 // Remove the built files
