@@ -1,6 +1,11 @@
 ## Change Log
 
-### upcoming (2017/02/01 18:50 +00:00)
+### upcoming (2017/02/02 03:16 +00:00)
+- [358d244](https://github.com/pragmaticivan/wizard/commit/358d2443c8df1b66b2c6eaad78bb674a99edbdcb) Adds build watch task (@pragmaticivan)
+- [90602c9](https://github.com/pragmaticivan/wizard/commit/90602c9e00107a050232b43c79f67354b951a4c6) Fixes promise return on 'into' function (@pragmaticivan)
+
+### v0.0.20 (2017/02/01 18:50 +00:00)
+- [c836750](https://github.com/pragmaticivan/wizard/commit/c836750066d1e838eca0c13571ffb4b95a60acaa) 0.0.20 (@pragmaticivan)
 - [904c7dd](https://github.com/pragmaticivan/wizard/commit/904c7dd1d00f6430f6f36fd6edf0cb96bea8b732) Fixes return for eslint (@pragmaticivan)
 
 ### v0.0.19 (2017/02/01 18:44 +00:00)
