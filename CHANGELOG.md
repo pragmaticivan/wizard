@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2017/02/02 03:16 +00:00)
+### upcoming (2017/02/03 18:43 +00:00)
+- [eba11a3](https://github.com/pragmaticivan/wizard/commit/eba11a34b905eb2503b5703b2d6fbca766623671) Updates doc and clean contructor (@pragmaticivan)
+
+### v0.0.21 (2017/02/02 03:16 +00:00)
+- [73d33a5](https://github.com/pragmaticivan/wizard/commit/73d33a505061c18f285964e285daf0bcd2535a79) 0.0.21 (@pragmaticivan)
 - [358d244](https://github.com/pragmaticivan/wizard/commit/358d2443c8df1b66b2c6eaad78bb674a99edbdcb) Adds build watch task (@pragmaticivan)
 - [90602c9](https://github.com/pragmaticivan/wizard/commit/90602c9e00107a050232b43c79f67354b951a4c6) Fixes promise return on 'into' function (@pragmaticivan)
 
