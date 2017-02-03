@@ -10,7 +10,7 @@ class Wizard {
    * Constructor.
    * @param  {Object} optConfig
    */
-  constructor(optConfig) {
+  constructor(optConfig = {}) {
     this.options_ = {
       cwd: process.cwd(),
       logger: console,
@@ -18,8 +18,6 @@ class Wizard {
       loggingType: 'info',
       defaultExclusion: [],
     };
-
-    optConfig = optConfig || {};
 
     this.mergeOptions_(optConfig);
 
@@ -30,13 +28,13 @@ class Wizard {
   }
 
   /**
-   * Inject glob pattern.
+   * Accumulate glob pattern to be inserted into the main object.
    * @param  {string} glob
    * @return {Wizard}
    */
   inject(glob) {
     if (!glob) {
-      throw new Error('Param is required.');
+      throw new Error('Glob is required.');
     }
 
     if (Array.isArray(glob)) {
@@ -49,7 +47,7 @@ class Wizard {
   }
 
   /**
-   * Exclude glob pattern.
+   * Accumulates glob pattern to be excluded from the main object.
    * @param  {string} glob
    * @return {Wizard}
    */
@@ -90,7 +88,7 @@ class Wizard {
   }
 
   /**
-   * Target where the files are going to be in jected.
+   * Target where the files are going to be injected.
    * @param {Object} obj
    * @param {[]} optArgs
    * @return {Promise}
