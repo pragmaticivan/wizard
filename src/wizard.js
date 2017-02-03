@@ -53,7 +53,7 @@ class Wizard {
    */
   exclude(glob) {
     if (!glob) {
-      throw new Error('Param is required.');
+      throw new Error('Glob is required.');
     }
 
     if (Array.isArray(glob)) {

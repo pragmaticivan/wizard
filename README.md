@@ -7,10 +7,6 @@
     <img src="https://secure.travis-ci.org/pragmaticivan/wizard.svg?branch=master" alt="Travis CI" />
   </a>
 
-  <a href="https://ci.appveyor.com/project/pragmaticivan/wizard/branch/master">
-    <img src="https://ci.appveyor.com/api/projects/status/1k84gf5457kl0r6k?svg=true" alt="Appveyor" />
-  </a>
-
   <a href="https://codecov.io/gh/pragmaticivan/wizard">
     <img src="https://codecov.io/gh/pragmaticivan/wizard/branch/master/graph/badge.svg" alt="Coverage" />
   </a>
