@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2017/02/03 18:43 +00:00)
+### v0.0.22 (2017/02/03 18:43 +00:00)
+- [b98b54e](https://github.com/pragmaticivan/wizard/commit/b98b54e8c887ed6d32c8a2c491599fd703769e10) 0.0.22 (@pragmaticivan)
 - [eba11a3](https://github.com/pragmaticivan/wizard/commit/eba11a34b905eb2503b5703b2d6fbca766623671) Updates doc and clean contructor (@pragmaticivan)
 
 ### v0.0.21 (2017/02/02 03:16 +00:00)
