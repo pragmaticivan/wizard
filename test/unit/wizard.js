@@ -88,9 +88,9 @@ describe('Wizard', function() {
       const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
-      let test = await instance.inject('model/**/*.js')
-                               .inject('controller/**/*.js')
-                               .into(app);
+      await instance.inject('model/**/*.js')
+                    .inject('controller/**/*.js')
+                    .into(app);
 
       ['module1', 'module2'].map((file) => {
         expect(typeof app.model[file]).to.equal('function');

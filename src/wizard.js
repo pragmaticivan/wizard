@@ -103,7 +103,7 @@ class Wizard {
         }
 
         files.forEach((fileGroup) => {
-          this.processInjection_(fileGroup, obj, optArgs)
+          this.processInjection_(fileGroup, obj, optArgs);
         });
         return resolve(files);
       });
@@ -192,7 +192,6 @@ class Wizard {
    * @return {Promise}
    */
   async getFiles() {
-
     let groupedFiles = [];
 
     for (let globPattern of this.getInjection()) {
@@ -203,6 +202,11 @@ class Wizard {
     return groupedFiles;
   }
 
+  /**
+   * Get files based on glob
+   * @param  {Array|String} pattern
+   * @return {Promise}
+   */
   getGlobFile(pattern) {
     const options = {
       ignore: this.getExclusion(),
