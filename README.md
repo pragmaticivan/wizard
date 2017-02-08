@@ -20,7 +20,7 @@
 
 ## Why
 
-Loading dependencies and including them into express shouldn't be hard. Sometimes you need a clean and powerful interface like the one provide on glob package to do the job.
+Loading dependencies and including them into express shouldn't be hard. Sometimes you need a clean and powerful interface like the one provide by the glob package to do the job.
 
 That's why express-wizard exists.
 
