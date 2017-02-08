@@ -32,7 +32,7 @@ describe('Wizard', function() {
     it('should add a glob pattern to inject one file', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
-      const file = 'test/fixtures/root_files/foo.js';
+      const file = ['test/fixtures/root_files/foo.js'];
 
       instance.inject('test/fixtures/root_files/foo.js');
 
@@ -43,8 +43,8 @@ describe('Wizard', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
       const files = [
-              'test/fixtures/module_files/model/**/*.js',
-              'test/fixtures/module_files/controller/**/*.js',
+              ['test/fixtures/module_files/model/**/*.js'],
+              ['test/fixtures/module_files/controller/**/*.js'],
             ];
 
       instance.inject('test/fixtures/module_files/model/**/*.js')
@@ -88,8 +88,9 @@ describe('Wizard', function() {
       const instance = new Wizard({verbose: verbose, cwd: cwd});
       let app = {};
 
-      await instance.inject('**/*.js')
-        .into(app);
+      await instance.inject('model/**/*.js')
+                    .inject('controller/**/*.js')
+                    .into(app);
 
       ['module1', 'module2'].map((file) => {
         expect(typeof app.model[file]).to.equal('function');

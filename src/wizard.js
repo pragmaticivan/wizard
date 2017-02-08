@@ -38,9 +38,9 @@ class Wizard {
     }
 
     if (Array.isArray(glob)) {
-      this.getInjection().concat(glob);
-    } else {
       this.getInjection().push(glob);
+    } else {
+      this.getInjection().push([glob]);
     }
 
     return this;
@@ -101,7 +101,11 @@ class Wizard {
         if (files.length <= 0) {
           resolve([]);
         }
-        return resolve(this.processInjection_(files, obj, optArgs));
+
+        files.forEach((fileGroup) => {
+          this.processInjection_(fileGroup, obj, optArgs);
+        });
+        return resolve(files);
       });
     } catch(e) {
       return Promise.reject(e);
@@ -187,14 +191,30 @@ class Wizard {
    * Get files.
    * @return {Promise}
    */
-  getFiles() {
+  async getFiles() {
+    let groupedFiles = [];
+
+    for (let globPattern of this.getInjection()) {
+      let files = await this.getGlobFile(globPattern);
+      groupedFiles.push(files);
+    }
+
+    return groupedFiles;
+  }
+
+  /**
+   * Get files based on glob
+   * @param  {Array|String} pattern
+   * @return {Promise}
+   */
+  getGlobFile(pattern) {
     const options = {
       ignore: this.getExclusion(),
       cwd: this.getOptions().cwd,
     };
 
     return new Promise((resolve, reject) => {
-      glob(this.getInjection(), options, (err, files) => {
+      glob(pattern, options, (err, files) => {
         err === null ? resolve(files) : reject(err);
       });
     });
