@@ -27,8 +27,10 @@ describe('Wizard', function() {
       expect(instance.getOptions().cwd).to.equal(cwd);
     });
 
-    it('should load default exclusion into exclusion list', function () {
-      const instance = new Wizard({cwd: cwd, verbose: verbose, defaultExclusion: ['foo.js']});
+    it('should load default exclusion into exclusion list', function() {
+      const instance = new Wizard({cwd: cwd,
+                                   verbose: verbose,
+                                   defaultExclusion: ['foo.js']});
       expect(instance.getExclusion()).to.deep.equal(['foo.js']);
     });
   });
@@ -68,7 +70,7 @@ describe('Wizard', function() {
       expect(files).to.deep.equal(instance.getInjection());
     });
 
-    it('should thrown an error if glob is not provided', function () {
+    it('should thrown an error if glob is not provided', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
 
@@ -89,7 +91,7 @@ describe('Wizard', function() {
       expect([file]).to.deep.equal(instance.getExclusion());
     });
 
-    it('should add a glob pattern to exclude one file using an array', function() {
+    it('should add a glob pattern to exclude one file using array', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
       const file = 'test/fixtures/root_files/foo.js';
@@ -113,7 +115,7 @@ describe('Wizard', function() {
       expect(files).to.deep.equal(instance.getExclusion());
     });
 
-    it('should thrown an error if glob is not provided', function () {
+    it('should thrown an error if glob is not provided', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
 
@@ -183,9 +185,5 @@ describe('Wizard', function() {
 
       expect(typeof app['service']).to.equal('function');
     });
-
-
-
-
   });
 });

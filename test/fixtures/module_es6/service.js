@@ -1,3 +1,7 @@
+/**
+ * Service using default
+ * @return {Function}
+ */
 export default function() {
-  return this;
-};
+  return this; // eslint-disable-line no-invalid-this
+}
