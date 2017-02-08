@@ -6,11 +6,12 @@
   },
   "globals": {
     "expect": false,
+    "sinon": false,
   },
   "env": {
     "node": true,
     "mocha": true,
-    "es6": true
+    "es6": true,
   },
   "rules": {
     "no-process-env": 0

@@ -25,6 +25,8 @@ class Wizard {
     this.exclusion_ = [];
 
     this.loadDefaultExclusion_();
+
+    this.log_(['Initialized in', this.getOptions().cwd]);
   }
 
   /**
@@ -143,6 +145,8 @@ class Wizard {
         mod = mod.apply(mod, args);
       }
 
+      this.log_(['+', this.getRelativePath_(loopFile)], 'log');
+
       this.createNamespace_(obj, parts, mod);
     });
 
@@ -243,6 +247,21 @@ class Wizard {
    */
   getFullPath_(file) {
     return `${this.getOptions().cwd}/${file}`;
+  }
+
+  /**
+   * Logs using default logger
+   * @param  {string} message
+   * @param  {string} type
+   * @return {Wizard}
+   */
+  log_(message, type) {
+    if (this.getOptions().verbose) {
+      this.getOptions()
+          .logger[type || this.getOptions().loggingType](message.join(' '));
+    }
+
+    return this;
   }
 
   /**

@@ -35,6 +35,17 @@ describe('Wizard', function() {
     });
   });
 
+  describe('logging', function() {
+    it('should log when verbose is true', function() {
+      const cwd = path.resolve('test/fixtures/module_files');
+      sinon.stub(console, 'info');
+      new Wizard({cwd: cwd, verbose: true});
+      const calledWith = console.info // eslint-disable-line no-console
+                                .calledWith(`Initialized in ${cwd}`); // eslint-disable-line  max-len
+      expect(calledWith).to.be.true;
+    });
+  });
+
   describe('inject', function() {
     it('should add a glob pattern to inject one file', function() {
       const verbose = false;
