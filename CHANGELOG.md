@@ -1,6 +1,8 @@
 ## Change Log
 
-### upcoming (2017/02/08 19:12 +00:00)
+### upcoming (2017/02/08 19:22 +00:00)
+- [00934d6](https://github.com/pragmaticivan/wizard/commit/00934d6aa0d22388937932f116415fe4e7620d5a) Fixes eslint (@pragmaticivan)
+- [5dad5d1](https://github.com/pragmaticivan/wizard/commit/5dad5d10039c7eba1bb3318a5b4cbb6560d8f693) 0.1.1 (@pragmaticivan)
 - [8a4cd87](https://github.com/pragmaticivan/wizard/commit/8a4cd87b6ff66078d63cd4f86e2ae34dbb3e5c5e) Adds full coverage for all specs (@pragmaticivan)
 - [755963d](https://github.com/pragmaticivan/wizard/commit/755963dd4b8e71f8c7e9e48d4611616693ffd57d) Updates default test watch to coverage task (@pragmaticivan)
 
