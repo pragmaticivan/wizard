@@ -57,7 +57,7 @@ class Wizard {
     }
 
     if (Array.isArray(glob)) {
-      this.getExclusion().concat(glob);
+      Array.prototype.push.apply(this.getExclusion(),glob);
     } else {
       this.getExclusion().push(glob);
     }
@@ -103,7 +103,7 @@ class Wizard {
         }
 
         files.forEach((fileGroup) => {
-          this.processInjection_(fileGroup, obj, optArgs);
+          let test = this.processInjection_(fileGroup, obj, optArgs);
         });
         return resolve(files);
       });

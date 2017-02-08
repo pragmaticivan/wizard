@@ -26,6 +26,11 @@ describe('Wizard', function() {
       const instance = new Wizard({cwd: cwd, verbose: verbose});
       expect(instance.getOptions().cwd).to.equal(cwd);
     });
+
+    it('should load default exclusion into exclusion list', function () {
+      const instance = new Wizard({cwd: cwd, verbose: verbose, defaultExclusion: ['foo.js']});
+      expect(instance.getExclusion()).to.deep.equal(['foo.js']);
+    });
   });
 
   describe('inject', function() {
@@ -35,6 +40,16 @@ describe('Wizard', function() {
       const file = ['test/fixtures/root_files/foo.js'];
 
       instance.inject('test/fixtures/root_files/foo.js');
+
+      expect([file]).to.deep.equal(instance.getInjection());
+    });
+
+    it('should add a glob pattern to inject one file using array', function() {
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+      const file = ['test/fixtures/root_files/foo.js'];
+
+      instance.inject(['test/fixtures/root_files/foo.js']);
 
       expect([file]).to.deep.equal(instance.getInjection());
     });
@@ -52,6 +67,15 @@ describe('Wizard', function() {
 
       expect(files).to.deep.equal(instance.getInjection());
     });
+
+    it('should thrown an error if glob is not provided', function () {
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+
+      expect(function() {
+         instance.inject();
+      }).to.throw('Glob is required.');
+    });
   });
 
   describe('exclude', function() {
@@ -61,6 +85,16 @@ describe('Wizard', function() {
       const file = 'test/fixtures/root_files/foo.js';
 
       instance.exclude('test/fixtures/root_files/foo.js');
+
+      expect([file]).to.deep.equal(instance.getExclusion());
+    });
+
+    it('should add a glob pattern to exclude one file using an array', function() {
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+      const file = 'test/fixtures/root_files/foo.js';
+
+      instance.exclude(['test/fixtures/root_files/foo.js']);
 
       expect([file]).to.deep.equal(instance.getExclusion());
     });
@@ -78,10 +112,19 @@ describe('Wizard', function() {
 
       expect(files).to.deep.equal(instance.getExclusion());
     });
+
+    it('should thrown an error if glob is not provided', function () {
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+
+      expect(function() {
+         instance.exclude();
+      }).to.throw('Glob is required.');
+    });
   });
 
   describe('into', function() {
-    const cwd = path.resolve('test/fixtures/module_files');
+    let cwd = path.resolve('test/fixtures/module_files');
     const verbose = false;
 
     it('should load the module_files app files', async () => {
@@ -121,5 +164,28 @@ describe('Wizard', function() {
 
       expect(app.controller.module1.execute).to.equal(true);
     });
+
+    it('should not update fake app if there\'s no injected files', async () => {
+      const instance = new Wizard({verbose: verbose, cwd: cwd});
+      let app = {};
+
+      await instance.into(app);
+
+      expect(app).to.deep.equal({});
+    });
+
+    it('should be able to load a file using export default', async () => {
+      const customCwd = path.resolve('test/fixtures/module_es6');
+      const instance = new Wizard({verbose: verbose, cwd: customCwd});
+      let app = {};
+
+      await instance.inject('service.js').into(app);
+
+      expect(typeof app['service']).to.equal('function');
+    });
+
+
+
+
   });
 });
