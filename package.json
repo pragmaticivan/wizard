@@ -1,6 +1,6 @@
 {
   "name": "express-wizard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Autoload your express dependencies using the power of glob",
   "main": "dist/all.js",
   "repository": {
