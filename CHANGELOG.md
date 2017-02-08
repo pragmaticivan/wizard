@@ -1,5 +1,14 @@
 ## Change Log
 
+### upcoming (2017/02/08 01:27 +00:00)
+- [#2](https://github.com/pragmaticivan/wizard/pull/2) Performs glob loading in parallel injecting the files by group (@pragmaticivan)
+- [05a41b9](https://github.com/pragmaticivan/wizard/commit/05a41b950caa08f14d55fcd567ba8f4eb5639f47) Fixes eslint (@pragmaticivan)
+- [2a2b18e](https://github.com/pragmaticivan/wizard/commit/2a2b18e19ea614c75d66441956ac454b88a96c37) Performs glob loading in parallel injecting the files by group (@pragmaticivan)
+
+### v0.0.23 (2017/02/03 18:48 +00:00)
+- [523c544](https://github.com/pragmaticivan/wizard/commit/523c544b5a4cab1becc7a04ce9e93d9b0ce932af) 0.0.23 (@pragmaticivan)
+- [1f08d8a](https://github.com/pragmaticivan/wizard/commit/1f08d8a18751be1fc04f2780285396bae5d67c00) Fixes doc and removes appveyor.com support (@pragmaticivan)
+
 ### v0.0.22 (2017/02/03 18:43 +00:00)
 - [b98b54e](https://github.com/pragmaticivan/wizard/commit/b98b54e8c887ed6d32c8a2c491599fd703769e10) 0.0.22 (@pragmaticivan)
 - [eba11a3](https://github.com/pragmaticivan/wizard/commit/eba11a34b905eb2503b5703b2d6fbca766623671) Updates doc and clean contructor (@pragmaticivan)
