@@ -1,6 +1,11 @@
 ## Change Log
 
-### upcoming (2017/02/08 01:27 +00:00)
+### upcoming (2017/02/08 19:12 +00:00)
+- [8a4cd87](https://github.com/pragmaticivan/wizard/commit/8a4cd87b6ff66078d63cd4f86e2ae34dbb3e5c5e) Adds full coverage for all specs (@pragmaticivan)
+- [755963d](https://github.com/pragmaticivan/wizard/commit/755963dd4b8e71f8c7e9e48d4611616693ffd57d) Updates default test watch to coverage task (@pragmaticivan)
+
+### v0.1.0 (2017/02/08 01:27 +00:00)
+- [8b45be2](https://github.com/pragmaticivan/wizard/commit/8b45be279f15a78c23b1f4532f7406a5d1ead968) 0.1.0 (@pragmaticivan)
 - [#2](https://github.com/pragmaticivan/wizard/pull/2) Performs glob loading in parallel injecting the files by group (@pragmaticivan)
 - [05a41b9](https://github.com/pragmaticivan/wizard/commit/05a41b950caa08f14d55fcd567ba8f4eb5639f47) Fixes eslint (@pragmaticivan)
 - [2a2b18e](https://github.com/pragmaticivan/wizard/commit/2a2b18e19ea614c75d66441956ac454b88a96c37) Performs glob loading in parallel injecting the files by group (@pragmaticivan)
