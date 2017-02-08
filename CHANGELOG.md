@@ -1,5 +1,9 @@
 ## Change Log
 
+### upcoming (2017/02/08 20:42 +00:00)
+- [1e06a26](https://github.com/pragmaticivan/wizard/commit/1e06a2656d081998e72ca29edf073e47e4c93a51) Adds custom log support (@pragmaticivan)
+- [99aedb6](https://github.com/pragmaticivan/wizard/commit/99aedb65d22ece87709520bb1f79d416f9af58c2) Update changelog (@pragmaticivan)
+
 ### v0.1.2 (2017/02/08 19:22 +00:00)
 - [83dc896](https://github.com/pragmaticivan/wizard/commit/83dc896afc95eb366321a4363ddc06c0fa3881c7) 0.1.2 (@pragmaticivan)
 - [00934d6](https://github.com/pragmaticivan/wizard/commit/00934d6aa0d22388937932f116415fe4e7620d5a) Fixes eslint (@pragmaticivan)
