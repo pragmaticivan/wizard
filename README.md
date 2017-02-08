@@ -45,7 +45,7 @@ var instance = new Wizard()
                       .inject('stop.js')
                       .exclude('middleware/**/*.js')
                       .exclude('start.js')
-                      .into(app)
+                      .into(app);
 // app.model.foo
 // app.model.bar
 // app.controller.foo
@@ -61,13 +61,13 @@ var instance = new Wizard()
 #### Defaults
 
 ```js
-  new Wizard({
-    cwd: process.cwd(),
-    logger: console,
-    verbose: true,
-    loggingType: 'info',
-    defaultExclusion: []
-  })
+new Wizard({
+  cwd: process.cwd(),
+  logger: console,
+  verbose: true,
+  loggingType: 'info',
+  defaultExclusion: []
+});
 ```
 ### Logging
 
