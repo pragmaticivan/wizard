@@ -97,7 +97,7 @@ function codeCoverageServer() {
  * Test watch helper.
  */
 function testWatch() {
-  gulp.watch(watchFiles, ['test']);
+  gulp.watch(watchFiles, ['coverage']);
 }
 
 
