@@ -28,13 +28,13 @@ That's why express-wizard exists.
 
 You can get it on npm.
 
-```
+```bash
 npm install express-wizard --save
 or
 yarn add express-wizard
 ```
 ## Usage
-```
+```js
 var Wizard = require('express-wizard');
 
 var instance = new Wizard()
