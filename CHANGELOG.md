@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2017/02/08 20:42 +00:00)
+### v0.2.0 (2017/02/08 20:42 +00:00)
+- [f4de731](https://github.com/pragmaticivan/wizard/commit/f4de73121969d57d268125299605d321052f4828) 0.2.0 (@pragmaticivan)
 - [1e06a26](https://github.com/pragmaticivan/wizard/commit/1e06a2656d081998e72ca29edf073e47e4c93a51) Adds custom log support (@pragmaticivan)
 - [99aedb6](https://github.com/pragmaticivan/wizard/commit/99aedb65d22ece87709520bb1f79d416f9af58c2) Update changelog (@pragmaticivan)
 
