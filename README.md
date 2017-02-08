@@ -29,9 +29,11 @@ That's why express-wizard exists.
 You can get it on npm.
 
 ```bash
-npm install express-wizard --save
-or
-yarn add express-wizard
+$ npm install express-wizard --save
+
+// or
+
+$ yarn add express-wizard
 ```
 ## Usage
 ```js
@@ -58,15 +60,15 @@ var instance = new Wizard()
 
 #### Defaults
 
-  ```js
-    new Wizard({
-      cwd: process.cwd(),
-      logger: console,
-      verbose: true,
-      loggingType: 'info',
-      defaultExclusion: []
-    })
-  ```
+```js
+  new Wizard({
+    cwd: process.cwd(),
+    logger: console,
+    verbose: true,
+    loggingType: 'info',
+    defaultExclusion: []
+  })
+```
 ### Logging
 
   `logger` - Defaults to console, this can be switched out.
@@ -77,30 +79,30 @@ var instance = new Wizard()
 
   Wizard will simply use a relative path from your current working directory, however sometimes you don't want heavily nested files included in the object chain, so you can set the cwd:
 
-  ```js
-  new Wizard()
-    .include('project/model/**/*.js') // ./project/model/foo.js
-    .into(app);
-  ```
+```js
+new Wizard()
+  .include('project/model/**/*.js') // ./project/model/foo.js
+  .into(app);
+```
 
   would result in:
 
-  ```js
-  app.project.model.foo
-  ```
+```js
+app.project.model.foo
+```
 
   so using the `cwd` option:
 
-  ```js
-  new Wizard({cwd: 'project'})
-    .include('model/**/*.js') // ./project/model/foo.js
-    .into(app);
-  ```
+```js
+new Wizard({cwd: 'project'})
+  .include('model/**/*.js') // ./project/model/foo.js
+  .into(app);
+```
   would give us:
 
-  ```js
-  app.model.foo
-  ```
+```js
+app.model.foo
+```
 
 
 ## Semver
@@ -111,10 +113,13 @@ Until wizard reaches a `1.0` release, breaking changes will be released with a n
 
 To run the test suite, first install the dependencies, then run `npm test`:
 
-  ```bash
-  $ npm install or yarn install
-  $ npm test
-  ```
+```bash
+$ npm install
+or
+$ yarn install
+
+$ npm test
+```
 ## Resources
 
 * [Changelog](https://github.com/pragmaticivan/wizard/blob/master/CHANGELOG.md)
