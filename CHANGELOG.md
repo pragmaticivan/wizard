@@ -1,6 +1,15 @@
 ## Change Log
 
-### upcoming (2017/02/08 21:52 +00:00)
+### upcoming (2017/02/09 00:29 +00:00)
+- [6d6b509](https://github.com/pragmaticivan/wizard/commit/6d6b50903011d936a6fc04f189012de2173c471b) Adds reject to protect processInjection (@pragmaticivan)
+- [7969330](https://github.com/pragmaticivan/wizard/commit/796933012ef8849d756d22f8b149899afe691c59) Removes unused transform plugin (@pragmaticivan)
+- [029187b](https://github.com/pragmaticivan/wizard/commit/029187b011f8c2372910aeed34cb06e186ebd05f) Improves code spacing on readme (@pragmaticivan)
+- [9c64e69](https://github.com/pragmaticivan/wizard/commit/9c64e69b35d4cfd107950573a0d2332224d5d2fb) Improves code spacing on readme (@pragmaticivan)
+- [bf65744](https://github.com/pragmaticivan/wizard/commit/bf657447c63ee23433728be82787311c9584695b) Updates readme style (@pragmaticivan)
+- [2cec979](https://github.com/pragmaticivan/wizard/commit/2cec97930c25ffbbfb00fa357856b9196e6d40bf) Fixes readme (@pragmaticivan)
+
+### v0.2.1 (2017/02/08 21:52 +00:00)
+- [7133864](https://github.com/pragmaticivan/wizard/commit/71338648c338e1632eaef252636233624c90757f) 0.2.1 (@pragmaticivan)
 - [0546695](https://github.com/pragmaticivan/wizard/commit/0546695b9c7f80cfdb9eca8efec67de0a13b5045) Improves readme (@pragmaticivan)
 - [ac2d724](https://github.com/pragmaticivan/wizard/commit/ac2d7245b8dc82bfa48f24c298223ef39f866277) Update changelog (@pragmaticivan)
 
