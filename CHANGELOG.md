@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2017/02/10 17:54 +00:00)
+### upcoming (2017/02/10 17:56 +00:00)
+- [4b2ebdd](https://github.com/pragmaticivan/wizard/commit/4b2ebddc1459a446ea6f2d24b092af59d3321044) Fixes bluebird support (@pragmaticivan)
+
+### v0.2.3 (2017/02/10 17:54 +00:00)
+- [2602c6e](https://github.com/pragmaticivan/wizard/commit/2602c6ea0dc918cade5effb2e050b522097a9f87) 0.2.3 (@pragmaticivan)
 - [c0e8cb8](https://github.com/pragmaticivan/wizard/commit/c0e8cb89e40a232b9226d567e0579d3b8e95a325) Adds bluebird to replace native promises (@pragmaticivan)
 
 ### v0.2.2 (2017/02/09 00:29 +00:00)
