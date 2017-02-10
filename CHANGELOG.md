@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2017/02/09 00:29 +00:00)
+### upcoming (2017/02/10 17:54 +00:00)
+- [c0e8cb8](https://github.com/pragmaticivan/wizard/commit/c0e8cb89e40a232b9226d567e0579d3b8e95a325) Adds bluebird to replace native promises (@pragmaticivan)
+
+### v0.2.2 (2017/02/09 00:29 +00:00)
+- [553691b](https://github.com/pragmaticivan/wizard/commit/553691bf55f1bade903f6743b629c7ba4199f1af) 0.2.2 (@pragmaticivan)
 - [6d6b509](https://github.com/pragmaticivan/wizard/commit/6d6b50903011d936a6fc04f189012de2173c471b) Adds reject to protect processInjection (@pragmaticivan)
 - [7969330](https://github.com/pragmaticivan/wizard/commit/796933012ef8849d756d22f8b149899afe691c59) Removes unused transform plugin (@pragmaticivan)
 - [029187b](https://github.com/pragmaticivan/wizard/commit/029187b011f8c2372910aeed34cb06e186ebd05f) Improves code spacing on readme (@pragmaticivan)
