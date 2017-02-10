@@ -54,6 +54,7 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
+    "bluebird": "^3.4.7",
     "multi-glob": "^1.0.1"
   }
 }
