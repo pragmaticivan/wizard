@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2017/02/13 03:35 +00:00)
+### upcoming (2017/02/13 17:27 +00:00)
+- [e6c37db](https://github.com/pragmaticivan/wizard/commit/e6c37dba1a39f46c51b2a2ab3d0a167a1fd5533d) Fixes lint (@pragmaticivan)
+
+### v0.2.5 (2017/02/13 03:35 +00:00)
+- [3b41e1a](https://github.com/pragmaticivan/wizard/commit/3b41e1a2805b6b29e999eb0de1a38fec3a6675fd) 0.2.5 (@pragmaticivan)
 - [df4b3d1](https://github.com/pragmaticivan/wizard/commit/df4b3d1131c056b70e40d8ac2bdb5533762ddeb9) Check if file exist (@pragmaticivan)
 
 ### v0.2.4 (2017/02/10 17:56 +00:00)
