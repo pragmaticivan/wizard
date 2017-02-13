@@ -174,9 +174,8 @@ class Wizard {
         } catch(e) {
           reject(e);
         }
-
-        resolve(obj);
       });
+      resolve(obj);
     });
   }
 
