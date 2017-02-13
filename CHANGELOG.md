@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2017/02/13 18:08 +00:00)
+### v0.2.9 (2017/02/13 18:08 +00:00)
+- [67279e5](https://github.com/pragmaticivan/wizard/commit/67279e51fc70c0c313e17cba6db1b6c7bea8b3b1) 0.2.9 (@pragmaticivan)
 - [718012b](https://github.com/pragmaticivan/wizard/commit/718012b5b497a35ba26fc6b2cff51f8a3ee8a0be) Improves reject catch (@pragmaticivan)
 
 ### v0.2.8 (2017/02/13 17:50 +00:00)
