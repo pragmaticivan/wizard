@@ -109,7 +109,11 @@ class Wizard {
         resolve([]);
       }
 
-      this.processInjectionGroup_(files, obj, optArgs);
+      try {
+        this.processInjectionGroup_(files, obj, optArgs);
+      } catch(e) {
+        reject(e);
+      }
 
       return resolve();
     });
@@ -137,35 +141,40 @@ class Wizard {
   processInjection_(fileGroup, obj, optArgs) {
     return new Promise((resolve, reject) => {
       fileGroup.forEach( (f) => {
-        let loopFile = f;
+        try {
+          let loopFile = f;
 
-        delete require.cache[this.getFullPath_(loopFile)];
+          delete require.cache[this.getFullPath_(loopFile)];
 
-        let args = [];
-        let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
-        if (!fs.existsSync(this.getFullPath_(loopFile))) {
-          this.log_(['File not found:', this.getFullPath_(loopFile)]);
-          return;
+          let args = [];
+          let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
+          if (!fs.existsSync(this.getFullPath_(loopFile))) {
+            this.log_(['File not found:', this.getFullPath_(loopFile)]);
+            return;
+          }
+          let mod = require(this.getFullPath_(loopFile));
+
+          if (mod.default) {
+            mod = mod.default;
+          }
+
+          args.push(obj);
+
+          optArgs.forEach((arg) => {
+            args.push(arg);
+          });
+
+          if (typeof mod === 'function') {
+            mod = mod.apply(mod, args);
+          }
+
+          this.log_(['+', this.getRelativePath_(loopFile)], 'info');
+
+          this.createNamespace_(obj, parts, mod);
+        } catch(e) {
+          reject(e);
         }
-        let mod = require(this.getFullPath_(loopFile));
 
-        if (mod.default) {
-          mod = mod.default;
-        }
-
-        args.push(obj);
-
-        optArgs.forEach((arg) => {
-          args.push(arg);
-        });
-
-        if (typeof mod === 'function') {
-          mod = mod.apply(mod, args);
-        }
-
-        this.log_(['+', this.getRelativePath_(loopFile)], 'info');
-
-        this.createNamespace_(obj, parts, mod);
         resolve(obj);
       });
     });
