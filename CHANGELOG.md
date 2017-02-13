@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2017/02/10 17:56 +00:00)
+### upcoming (2017/02/13 03:35 +00:00)
+- [df4b3d1](https://github.com/pragmaticivan/wizard/commit/df4b3d1131c056b70e40d8ac2bdb5533762ddeb9) Check if file exist (@pragmaticivan)
+
+### v0.2.4 (2017/02/10 17:56 +00:00)
+- [ec03439](https://github.com/pragmaticivan/wizard/commit/ec034394a977f8e0bd2ac5fe7f3f997491d15bf9) 0.2.4 (@pragmaticivan)
 - [4b2ebdd](https://github.com/pragmaticivan/wizard/commit/4b2ebddc1459a446ea6f2d24b092af59d3321044) Fixes bluebird support (@pragmaticivan)
 
 ### v0.2.3 (2017/02/10 17:54 +00:00)
