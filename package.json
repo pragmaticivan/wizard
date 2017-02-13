@@ -11,6 +11,10 @@
   "bugs": {
     "url": "https://github.com/pragmaticivan/wizard/issues"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "node ./node_modules/.bin/gulp build",
     "lint": "node ./node_modules/.bin/gulp lint",
