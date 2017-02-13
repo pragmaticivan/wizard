@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2017/02/13 17:40 +00:00)
+### upcoming (2017/02/13 17:50 +00:00)
+- [8ac5051](https://github.com/pragmaticivan/wizard/commit/8ac5051786a9a20e52ce870690d79fcf882021a0) Adds files field on package.json (@pragmaticivan)
+
+### v0.2.7 (2017/02/13 17:40 +00:00)
+- [d29dcb1](https://github.com/pragmaticivan/wizard/commit/d29dcb102fffaf258270d9a109bd7cf188b7abbe) 0.2.7 (@pragmaticivan)
 - [3d66a15](https://github.com/pragmaticivan/wizard/commit/3d66a158ae88fda0f06099487bf8ec1f58cee1f1) Removes npmignore (@pragmaticivan)
 - [99359b2](https://github.com/pragmaticivan/wizard/commit/99359b23f75d28c717fb9063d1458a5714384bbd) Adds jsnext support (@pragmaticivan)
 
