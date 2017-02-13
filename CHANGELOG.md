@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2017/02/13 17:50 +00:00)
+### upcoming (2017/02/13 18:08 +00:00)
+- [718012b](https://github.com/pragmaticivan/wizard/commit/718012b5b497a35ba26fc6b2cff51f8a3ee8a0be) Improves reject catch (@pragmaticivan)
+
+### v0.2.8 (2017/02/13 17:50 +00:00)
+- [36e6ce4](https://github.com/pragmaticivan/wizard/commit/36e6ce400f306f9b9009ca756efb6f13ca8f80d8) 0.2.8 (@pragmaticivan)
 - [8ac5051](https://github.com/pragmaticivan/wizard/commit/8ac5051786a9a20e52ce870690d79fcf882021a0) Adds files field on package.json (@pragmaticivan)
 
 ### v0.2.7 (2017/02/13 17:40 +00:00)

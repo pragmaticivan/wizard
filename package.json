@@ -1,6 +1,6 @@
 {
   "name": "express-wizard",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Autoload your express dependencies using the power of glob",
   "main": "dist/all.js",
   "jsnext:main": "src/wizard.js",
