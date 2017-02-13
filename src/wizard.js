@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 const glob = require('multi-glob').glob;
 
 /**
@@ -96,66 +97,79 @@ class Wizard {
    * @return {Promise}
    */
   async into(obj, ...optArgs) {
+    let files = [];
     try {
-      let files = await this.getFiles();
-
-      return new Promise((resolve, reject) => {
-        if (files.length <= 0) {
-          resolve([]);
-        }
-
-        try {
-          files.forEach((fileGroup) => {
-            this.processInjection_(fileGroup, obj, optArgs);
-          });
-        } catch(e) {
-          reject(e);
-        }
-
-        return resolve(files);
-      });
+      files = await this.getFiles();
     } catch(e) {
       return Promise.reject(e);
     }
+
+    return new Promise((resolve, reject) => {
+      if (files.length <= 0) {
+        resolve([]);
+      }
+
+      this.processInjectionGroup_(files, obj, optArgs);
+
+      return resolve();
+    });
+
+  }
+
+  /**
+   * Process injection group
+   * @param  {Array} files
+   * @param  {Object} obj
+   * @param  {Array} optArgs
+   */
+  processInjectionGroup_(files, obj, optArgs) {
+    files.forEach(async (fileGroup) => {
+      await this.processInjection_(fileGroup, obj, optArgs);
+    });
   }
 
   /**
    * Process file injection.
-   * @param  {string[]} files
+   * @param  {string[]} fileGroup
    * @param  {Object} obj
    * @param  {string[]} optArgs
    * @return {Object}
    */
-  processInjection_(files, obj, optArgs) {
-    files.forEach( (f) => {
-      let loopFile = f;
+  processInjection_(fileGroup, obj, optArgs) {
+    return new Promise((resolve, reject) => {
+      fileGroup.forEach( (f) => {
+        let loopFile = f;
 
-      delete require.cache[this.getFullPath_(loopFile)];
+        delete require.cache[this.getFullPath_(loopFile)];
 
-      let args = [];
-      let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
-      let mod = require(this.getFullPath_(loopFile));
+        let args = [];
+        let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
+        if (!fs.existsSync(this.getFullPath_(loopFile))) {
+          this.log_(['File not found:', this.getFullPath_(loopFile)]);
+          return;
+        }
+        let mod = require(this.getFullPath_(loopFile));
 
-      if (mod.default) {
-        mod = mod.default;
-      }
+        if (mod.default) {
+          mod = mod.default;
+        }
 
-      args.push(obj);
+        args.push(obj);
 
-      optArgs.forEach((arg) => {
-        args.push(arg);
+        optArgs.forEach((arg) => {
+          args.push(arg);
+        });
+
+        if (typeof mod === 'function') {
+          mod = mod.apply(mod, args);
+        }
+
+        this.log_(['+', this.getRelativePath_(loopFile)], 'info');
+
+        this.createNamespace_(obj, parts, mod);
+        resolve(obj);
       });
-
-      if (typeof mod === 'function') {
-        mod = mod.apply(mod, args);
-      }
-
-      this.log_(['+', this.getRelativePath_(loopFile)], 'log');
-
-      this.createNamespace_(obj, parts, mod);
     });
-
-    return obj;
   }
 
   /**
