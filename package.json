@@ -3,6 +3,7 @@
   "version": "0.2.6",
   "description": "Autoload your express dependencies using the power of glob",
   "main": "dist/all.js",
+  "jsnext:main": "src/wizard.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pragmaticivan/wizard.git"
