@@ -1,6 +1,11 @@
 ## Change Log
 
-### upcoming (2017/02/13 17:27 +00:00)
+### upcoming (2017/02/13 17:40 +00:00)
+- [3d66a15](https://github.com/pragmaticivan/wizard/commit/3d66a158ae88fda0f06099487bf8ec1f58cee1f1) Removes npmignore (@pragmaticivan)
+- [99359b2](https://github.com/pragmaticivan/wizard/commit/99359b23f75d28c717fb9063d1458a5714384bbd) Adds jsnext support (@pragmaticivan)
+
+### v0.2.6 (2017/02/13 17:27 +00:00)
+- [684bafc](https://github.com/pragmaticivan/wizard/commit/684bafc06ca23aceb3ad6078a6a7b4d8f232770d) 0.2.6 (@pragmaticivan)
 - [e6c37db](https://github.com/pragmaticivan/wizard/commit/e6c37dba1a39f46c51b2a2ab3d0a167a1fd5533d) Fixes lint (@pragmaticivan)
 
 ### v0.2.5 (2017/02/13 03:35 +00:00)
