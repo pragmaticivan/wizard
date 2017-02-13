@@ -113,7 +113,6 @@ class Wizard {
 
       return resolve();
     });
-
   }
 
   /**
