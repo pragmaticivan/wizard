@@ -148,10 +148,12 @@ class Wizard {
 
           let args = [];
           let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
+
           if (!fs.existsSync(this.getFullPath_(loopFile))) {
             this.log_(['File not found:', this.getFullPath_(loopFile)]);
             return;
           }
+
           let mod = require(this.getFullPath_(loopFile));
 
           if (mod.default) {
@@ -221,15 +223,21 @@ class Wizard {
    * Get files.
    * @return {Promise}
    */
-  async getFiles() {
+  getFiles() {
     let groupedFiles = [];
 
-    for (let globPattern of this.getInjection()) {
-      let files = await this.getGlobFile(globPattern);
-      groupedFiles.push(files);
-    }
+    return new Promise(async (resolve, reject) => {
+      try {
+        for (let globPattern of this.getInjection()) {
+          let files = await this.getGlobFile(globPattern);
+          groupedFiles.push(files);
+        }
+      } catch(e) {
+        reject(e);
+      }
 
-    return groupedFiles;
+      resolve(groupedFiles);
+    });
   }
 
   /**
