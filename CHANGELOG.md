@@ -1,6 +1,11 @@
 ## Change Log
 
-### upcoming (2017/02/14 02:39 +00:00)
+### upcoming (2017/02/14 21:31 +00:00)
+- [9e8aecd](https://github.com/pragmaticivan/wizard/commit/9e8aecda80a11fb76a5628f120f05511acd38bd5) Removes yarn due to maturity (@pragmaticivan)
+- [e5b7046](https://github.com/pragmaticivan/wizard/commit/e5b704618f4dd054e6a31c3ad65d7fb00a980a04) Fixes COC (@pragmaticivan)
+
+### v0.2.14 (2017/02/14 02:39 +00:00)
+- [25b78d4](https://github.com/pragmaticivan/wizard/commit/25b78d4381765bab224b078f17fff0edcc02634e) 0.2.14 (@pragmaticivan)
 - [65ca13d](https://github.com/pragmaticivan/wizard/commit/65ca13d870c71e0bcfe9bad326da831e4a9e321b) Removes some of the async code (@eduardolundgren)
 
 ### v0.2.13 (2017/02/14 01:02 +00:00)
