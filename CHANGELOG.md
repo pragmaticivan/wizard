@@ -1,5 +1,9 @@
 ## Change Log
 
+### v0.2.10 (2017/02/13 18:50 +00:00)
+- [c106c6e](https://github.com/pragmaticivan/wizard/commit/c106c6edc1e98e71372e0d58674d93c3030e9065) 0.2.10 (@pragmaticivan)
+- [80222af](https://github.com/pragmaticivan/wizard/commit/80222af2b3c76188bdb730e837603fbf73316acd) Moves promise resolve to outside the loop (@pragmaticivan)
+
 ### v0.2.9 (2017/02/13 18:08 +00:00)
 - [67279e5](https://github.com/pragmaticivan/wizard/commit/67279e51fc70c0c313e17cba6db1b6c7bea8b3b1) 0.2.9 (@pragmaticivan)
 - [718012b](https://github.com/pragmaticivan/wizard/commit/718012b5b497a35ba26fc6b2cff51f8a3ee8a0be) Improves reject catch (@pragmaticivan)
