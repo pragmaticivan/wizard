@@ -1,5 +1,12 @@
 ## Change Log
 
+### upcoming (2017/02/14 02:39 +00:00)
+- [65ca13d](https://github.com/pragmaticivan/wizard/commit/65ca13d870c71e0bcfe9bad326da831e4a9e321b) Removes some of the async code (@eduardolundgren)
+
+### v0.2.13 (2017/02/14 01:02 +00:00)
+- [b30ae22](https://github.com/pragmaticivan/wizard/commit/b30ae2250fae776a0d8e7c6b1677abc87aeeb622) 0.2.13 (@pragmaticivan)
+- [2e31b11](https://github.com/pragmaticivan/wizard/commit/2e31b11549cd474243eeb7ccd8e8e585f9aeae1d) Removes bluebird from babel register (@pragmaticivan)
+
 ### v0.2.12 (2017/02/14 00:55 +00:00)
 - [fdb9326](https://github.com/pragmaticivan/wizard/commit/fdb93263ebc115157d566489bfd3d6c342de635a) 0.2.12 (@pragmaticivan)
 - [47c6c65](https://github.com/pragmaticivan/wizard/commit/47c6c65ff98e11ad9d35d4c874cba0ed03de626f) Updates structure of Promise on into function (@pragmaticivan)
