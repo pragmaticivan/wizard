@@ -1,5 +1,9 @@
 ## Change Log
 
+### v0.2.11 (2017/02/14 00:51 +00:00)
+- [b7d01cc](https://github.com/pragmaticivan/wizard/commit/b7d01ccc1ee9a94ddd367f404640c0704a69a496) 0.2.11 (@pragmaticivan)
+- [323b74c](https://github.com/pragmaticivan/wizard/commit/323b74c96c6a4b6e78f241739ae4583471bd13dd) Controls rejection on getFiles function (@pragmaticivan)
+
 ### v0.2.10 (2017/02/13 18:50 +00:00)
 - [c106c6e](https://github.com/pragmaticivan/wizard/commit/c106c6edc1e98e71372e0d58674d93c3030e9065) 0.2.10 (@pragmaticivan)
 - [80222af](https://github.com/pragmaticivan/wizard/commit/80222af2b3c76188bdb730e837603fbf73316acd) Moves promise resolve to outside the loop (@pragmaticivan)
