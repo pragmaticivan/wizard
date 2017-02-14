@@ -1,5 +1,9 @@
 ## Change Log
 
+### v0.2.12 (2017/02/14 00:55 +00:00)
+- [fdb9326](https://github.com/pragmaticivan/wizard/commit/fdb93263ebc115157d566489bfd3d6c342de635a) 0.2.12 (@pragmaticivan)
+- [47c6c65](https://github.com/pragmaticivan/wizard/commit/47c6c65ff98e11ad9d35d4c874cba0ed03de626f) Updates structure of Promise on into function (@pragmaticivan)
+
 ### v0.2.11 (2017/02/14 00:51 +00:00)
 - [b7d01cc](https://github.com/pragmaticivan/wizard/commit/b7d01ccc1ee9a94ddd367f404640c0704a69a496) 0.2.11 (@pragmaticivan)
 - [323b74c](https://github.com/pragmaticivan/wizard/commit/323b74c96c6a4b6e78f241739ae4583471bd13dd) Controls rejection on getFiles function (@pragmaticivan)
