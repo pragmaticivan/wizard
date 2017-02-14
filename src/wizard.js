@@ -98,13 +98,14 @@ class Wizard {
    */
   async into(obj, ...optArgs) {
     let files = [];
-    try {
-      files = await this.getFiles();
-    } catch(e) {
-      return Promise.reject(e);
-    }
 
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        files = await this.getFiles();
+      } catch(e) {
+        reject(e);
+      }
+
       if (files.length <= 0) {
         resolve([]);
       }
@@ -115,7 +116,7 @@ class Wizard {
         reject(e);
       }
 
-      return resolve();
+      resolve(files);
     });
   }
 
