@@ -22,7 +22,7 @@
     "test": "node ./node_modules/.bin/gulp coverage",
     "test:watch": "node ./node_modules/.bin/gulp test:watch",
     "test:coverage:travis": "node ./node_modules/.bin/gulp test:coverage:travis",
-    "generate-changelog": "node ./node_modules/.bin/github-changes --owner pragmaticivan -a --repository wizard --use-commit-body  --order-semver",
+    "generate-changelog": "node ./node_modules/.bin/github-changes --owner pragmaticivan -a --repository wizard --only-pulls --use-commit-body  --order-semver",
     "preversion": "npm test",
     "postversion": "git push && git push --tags && rm -rf dist",
     "version": "npm run generate-changelog && git add CHANGELOG.md",
