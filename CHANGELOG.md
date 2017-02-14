@@ -1,6 +1,6 @@
 ## Change Log
 
-### upcoming (2017/02/14 21:32 +00:00)
+### upcoming (2017/02/14 21:39 +00:00)
 - [9e8aecd](https://github.com/pragmaticivan/wizard/commit/9e8aecda80a11fb76a5628f120f05511acd38bd5) Removes yarn due to maturity (@pragmaticivan)
 - [e5b7046](https://github.com/pragmaticivan/wizard/commit/e5b704618f4dd054e6a31c3ad65d7fb00a980a04) Fixes COC (@pragmaticivan)
 
