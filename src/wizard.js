@@ -1,5 +1,4 @@
 import path from 'path';
-import fs from 'fs';
 const glob = require('multi-glob').glob;
 
 /**
@@ -97,39 +96,16 @@ class Wizard {
    * @return {Promise}
    */
   async into(obj, ...optArgs) {
-    let files = [];
+    let files = await this.getFiles();
 
-    return new Promise(async (resolve, reject) => {
-      try {
-        files = await this.getFiles();
-      } catch(e) {
-        reject(e);
-      }
+    if (files.length === 0) {
+      return [];
+    }
 
-      if (files.length <= 0) {
-        resolve([]);
-      }
+    files.forEach((
+      fileGroup) => this.processInjection_(fileGroup, obj, optArgs));
 
-      try {
-        this.processInjectionGroup_(files, obj, optArgs);
-      } catch(e) {
-        reject(e);
-      }
-
-      resolve(files);
-    });
-  }
-
-  /**
-   * Process injection group
-   * @param  {Array} files
-   * @param  {Object} obj
-   * @param  {Array} optArgs
-   */
-  processInjectionGroup_(files, obj, optArgs) {
-    files.forEach(async (fileGroup) => {
-      await this.processInjection_(fileGroup, obj, optArgs);
-    });
+    return files;
   }
 
   /**
@@ -137,48 +113,34 @@ class Wizard {
    * @param  {string[]} fileGroup
    * @param  {Object} obj
    * @param  {string[]} optArgs
-   * @return {Object}
    */
   processInjection_(fileGroup, obj, optArgs) {
-    return new Promise((resolve, reject) => {
-      fileGroup.forEach( (f) => {
-        try {
-          let loopFile = f;
+    fileGroup.forEach((f) => {
+      let loopFile = f;
 
-          delete require.cache[this.getFullPath_(loopFile)];
+      delete require.cache[this.getFullPath_(loopFile)];
 
-          let args = [];
-          let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
+      let args = [];
+      let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
+      let mod = require(this.getFullPath_(loopFile));
 
-          if (!fs.existsSync(this.getFullPath_(loopFile))) {
-            this.log_(['File not found:', this.getFullPath_(loopFile)]);
-            return;
-          }
+      if (mod.default) {
+        mod = mod.default;
+      }
 
-          let mod = require(this.getFullPath_(loopFile));
+      args.push(obj);
 
-          if (mod.default) {
-            mod = mod.default;
-          }
-
-          args.push(obj);
-
-          optArgs.forEach((arg) => {
-            args.push(arg);
-          });
-
-          if (typeof mod === 'function') {
-            mod = mod.apply(mod, args);
-          }
-
-          this.log_(['+', this.getRelativePath_(loopFile)], 'info');
-
-          this.createNamespace_(obj, parts, mod);
-        } catch(e) {
-          reject(e);
-        }
+      optArgs.forEach((arg) => {
+        args.push(arg);
       });
-      resolve(obj);
+
+      if (typeof mod === 'function') {
+        mod = mod.apply(mod, args);
+      }
+
+      this.log_(['+', this.getRelativePath_(loopFile)], 'info');
+
+      this.createNamespace_(obj, parts, mod);
     });
   }
 
@@ -224,21 +186,15 @@ class Wizard {
    * Get files.
    * @return {Promise}
    */
-  getFiles() {
+  async getFiles() {
     let groupedFiles = [];
 
-    return new Promise(async (resolve, reject) => {
-      try {
-        for (let globPattern of this.getInjection()) {
-          let files = await this.getGlobFile(globPattern);
-          groupedFiles.push(files);
-        }
-      } catch(e) {
-        reject(e);
-      }
+    for (let globPattern of this.getInjection()) {
+      let files = await this.getGlobFile(globPattern);
+      groupedFiles.push(files);
+    }
 
-      resolve(groupedFiles);
-    });
+    return groupedFiles;
   }
 
   /**
@@ -247,14 +203,17 @@ class Wizard {
    * @return {Promise}
    */
   getGlobFile(pattern) {
-    const options = {
-      ignore: this.getExclusion(),
-      cwd: this.getOptions().cwd,
-    };
-
     return new Promise((resolve, reject) => {
+      const options = {
+        ignore: this.getExclusion(),
+        cwd: this.getOptions().cwd,
+      };
+
       glob(pattern, options, (err, files) => {
-        err === null ? resolve(files) : reject(err);
+        if (err) {
+          reject(err);
+        }
+        resolve(files);
       });
     });
   }
