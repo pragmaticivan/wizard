@@ -11,6 +11,10 @@
     <img src="https://codecov.io/gh/pragmaticivan/wizard/branch/master/graph/badge.svg" alt="Coverage" />
   </a>
 
+  <a href="https://codeclimate.com/github/pragmaticivan/wizard">
+    <img src="https://codeclimate.com/github/pragmaticivan/wizard/badges/gpa.svg" />
+  </a>
+
   <a href="https://www.npmjs.com/package/express-wizard">
     <img src="https://img.shields.io/npm/v/express-wizard.svg" alt="Npm" />
   </a>
