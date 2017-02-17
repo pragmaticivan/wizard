@@ -24,7 +24,7 @@ class Wizard {
     this.injection_ = [];
     this.exclusion_ = [];
 
-    this.fnProcessor_ = this.defaultProcessor_;
+    this.processorFn_ = this.defaultProcessorFn_;
 
     this.loadDefaultExclusion_();
 
@@ -58,7 +58,7 @@ class Wizard {
    * @param {Array} optArgs
    * @return {Function|Object}
    */
-  defaultProcessor_(mod, optArgs) {
+  defaultProcessorFn_(mod, optArgs) {
     if (mod.default) {
       mod = mod.default;
     }
@@ -92,8 +92,8 @@ class Wizard {
    * Returns module manipulation processor.
    * @return {Function}
    */
-  getProcessor() {
-    return this.fnProcessor_;
+  getProcessorFn() {
+    return this.processorFn_;
   }
 
   /**
@@ -184,8 +184,8 @@ class Wizard {
       let parts = this.getRelativePath_(loopFile).split(path.sep).slice(1);
       let mod = require(this.getFullPath_(loopFile));
 
-      if(this.getProcessor()) {
-        let processor = this.getProcessor();
+      if(this.getProcessorFn()) {
+        let processor = this.getProcessorFn();
         mod = processor(mod, optArgs);
       }
 
@@ -197,10 +197,10 @@ class Wizard {
 
   /**
    * Sets module manipulation processor.
-   * @param {Function} fnProcessor
+   * @param {Function} processorFn
    */
-  setProcessor(fnProcessor) {
-    this.fnProcessor_ = fnProcessor;
+  setProcessorFn(processorFn) {
+    this.processorFn_ = processorFn;
   }
 
   /**

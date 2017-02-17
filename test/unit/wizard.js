@@ -212,7 +212,7 @@ describe('Wizard', function() {
         console.info(optArgs);// eslint-disable-line no-console
       };
 
-      instance.setProcessor(customFunction);
+      instance.setProcessorFn(customFunction);
 
       await instance.inject('controller/**/*.js').into(app, app);
 
