@@ -31,7 +31,7 @@ describe('Wizard', function() {
       const instance = new Wizard({cwd: cwd,
                                    verbose: verbose,
                                    defaultExclusion: ['foo.js']});
-      expect(instance.getExclusion()).to.deep.equal(['foo.js']);
+      expect(instance.getExclusionGlobs()).to.deep.equal(['foo.js']);
     });
   });
 
@@ -46,6 +46,14 @@ describe('Wizard', function() {
     });
   });
 
+  describe('#getDefaultProcessorFn', () => {
+    it('should return a function', () => {
+      const verbose = false;
+      const instance = new Wizard({verbose: verbose});
+      expect(instance.getDefaultProcessorFn()).to.be.a('function');
+    });
+  });
+
   describe('#inject', function() {
     it('should add a glob pattern to inject one file', function() {
       const verbose = false;
@@ -54,7 +62,7 @@ describe('Wizard', function() {
 
       instance.inject('test/fixtures/root_files/foo.js');
 
-      expect([file]).to.deep.equal(instance.getInjection());
+      expect([file]).to.deep.equal(instance.getInjectionGlobs());
     });
 
     it('should add a glob pattern to inject one file using array', function() {
@@ -64,7 +72,7 @@ describe('Wizard', function() {
 
       instance.inject(['test/fixtures/root_files/foo.js']);
 
-      expect([file]).to.deep.equal(instance.getInjection());
+      expect([file]).to.deep.equal(instance.getInjectionGlobs());
     });
 
     it('should inject all the files in the module_files app', function() {
@@ -78,7 +86,7 @@ describe('Wizard', function() {
       instance.inject('test/fixtures/module_files/model/**/*.js')
               .inject('test/fixtures/module_files/controller/**/*.js');
 
-      expect(files).to.deep.equal(instance.getInjection());
+      expect(files).to.deep.equal(instance.getInjectionGlobs());
     });
 
     it('should thrown an error if glob is not provided', function() {
@@ -99,7 +107,7 @@ describe('Wizard', function() {
 
       instance.exclude('test/fixtures/root_files/foo.js');
 
-      expect([file]).to.deep.equal(instance.getExclusion());
+      expect([file]).to.deep.equal(instance.getExclusionGlobs());
     });
 
     it('should add a glob pattern to exclude one file using array', function() {
@@ -109,7 +117,7 @@ describe('Wizard', function() {
 
       instance.exclude(['test/fixtures/root_files/foo.js']);
 
-      expect([file]).to.deep.equal(instance.getExclusion());
+      expect([file]).to.deep.equal(instance.getExclusionGlobs());
     });
 
     it('should exclude all the files in the module_files app', function() {
@@ -123,7 +131,7 @@ describe('Wizard', function() {
       instance.exclude('test/fixtures/module_files/model/**/*.js')
               .exclude('test/fixtures/module_files/controller/**/*.js');
 
-      expect(files).to.deep.equal(instance.getExclusion());
+      expect(files).to.deep.equal(instance.getExclusionGlobs());
     });
 
     it('should thrown an error if glob is not provided', function() {
