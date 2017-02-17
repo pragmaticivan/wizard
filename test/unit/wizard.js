@@ -38,7 +38,7 @@ describe('Wizard', function() {
   describe('logging', function() {
     it('should log when verbose is true', function() {
       const cwd = path.resolve('test/fixtures/module_files');
-      sinon.stub(console, 'info');
+      stub(console, 'info');
       new Wizard({cwd: cwd, verbose: true});
       const calledWith = console.info // eslint-disable-line no-console
                                 .calledWith(`Initialized in ${cwd}`); // eslint-disable-line  max-len
@@ -46,7 +46,7 @@ describe('Wizard', function() {
     });
   });
 
-  describe('inject', function() {
+  describe('#inject', function() {
     it('should add a glob pattern to inject one file', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
@@ -91,7 +91,7 @@ describe('Wizard', function() {
     });
   });
 
-  describe('exclude', function() {
+  describe('#exclude', function() {
     it('should add a glob pattern to exclude one file', function() {
       const verbose = false;
       const instance = new Wizard({verbose: verbose});
@@ -136,7 +136,7 @@ describe('Wizard', function() {
     });
   });
 
-  describe('into', function() {
+  describe('#into', function() {
     let cwd = path.resolve('test/fixtures/module_files');
     const verbose = false;
 
@@ -173,7 +173,7 @@ describe('Wizard', function() {
       let app = {};
 
       await instance.inject('controller/**/*.js')
-        .into(app, true);
+        .into(app, app, true);
 
       expect(app.controller.module1.execute).to.equal(true);
     });
@@ -195,6 +195,29 @@ describe('Wizard', function() {
       await instance.inject('service.js').into(app);
 
       expect(typeof app['service']).to.equal('function');
+    });
+  });
+
+  describe('#setProcessor', () => {
+    let cwd = path.resolve('test/fixtures/module_files');
+    const verbose = false;
+
+    it('it should replace the default processor and create custom actions for each module', async() => { // eslint-disable-line  max-len
+      const instance = new Wizard({verbose: verbose, cwd: cwd});
+      let app = {};
+
+      stub(console, 'info');
+
+      let customFunction = (mod, optArgs) => {
+        console.info(optArgs);// eslint-disable-line no-console
+      };
+
+      instance.setProcessor(customFunction);
+
+      await instance.inject('controller/**/*.js').into(app, app);
+
+      expect(console.info.calledTwice) // eslint-disable-line no-console
+        .to.be.true;
     });
   });
 });
